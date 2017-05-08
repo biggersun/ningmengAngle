@@ -1,0 +1,18 @@
+@import 'assets/css/variables.scss';
+
+.ultrasound-container{
+    padding: $content-padding;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    & .ulstrasound-item{
+        height: .56rem;
+        width: 2.06rem;
+        border: 1px solid $border-color;
+        border-radius: .1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

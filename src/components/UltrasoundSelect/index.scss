@@ -1,0 +1,19 @@
+@import 'assets/css/variables.scss';
+
+
+.select-container{
+    padding: .44rem $content-padding;
+    color: $brand-color;
+    font-size: .34rem;
+
+    & .week-select{
+        height: .46rem;
+        width: .88rem;
+        font-size: .34rem;
+        border: 1px solid $border-color;
+        display: inline-block;
+        text-align: center;
+        color: $brand-color;
+        border-radius: .1rem;
+    }
+}

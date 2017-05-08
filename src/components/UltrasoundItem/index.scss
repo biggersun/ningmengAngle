@@ -1,0 +1,11 @@
+@import 'assets/css/variables.scss';
+
+.ulstrasound-item{
+    height: .56rem;
+    width: 2.06rem;
+    border: 1px solid $border-color;
+    border-radius: .1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

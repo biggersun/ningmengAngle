@@ -6,6 +6,8 @@ import {
 } from 'react-hot-loader'
 import App from './app'
 
+import './index.scss'
+
 injectTapEventPlugin()
 
 function render() {

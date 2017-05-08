@@ -1,5 +1,8 @@
 import React, { Component, } from 'react'
 
+import UltrasoundTable from '../../components/UltrasoundTable'
+import UltrasoundSelect from '../../components/UltrasoundSelect'
+
 const propTypes = {}
 
 const defaultProps = {}
@@ -11,9 +14,11 @@ class Ultrasound extends Component {
     }
 
     render() {
+        const numberWeek = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, ]
         return (
             <div>
-                <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
+                <UltrasoundSelect weekNumber={numberWeek} />
+                <UltrasoundTable />
             </div>
         )
     }
