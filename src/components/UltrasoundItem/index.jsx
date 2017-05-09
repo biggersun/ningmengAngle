@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './index.scss'
+
+import { Link, } from 'react-router'
 
 const propTypes = {
     name: PropTypes.string.isRequired,
@@ -10,7 +11,7 @@ const propTypes = {
 const defaultProps = {}
 
 const UltrasoundItem = props => (
-    <div className="ulstrasound-item">{props.name}({props.tips})</div>
+    <Link to="/article" className="ulstrasound-item">{props.name}({props.tips})</Link>
 )
 
 UltrasoundItem.propTypes = propTypes

@@ -35,7 +35,7 @@ class App extends PureComponent {
             return <div>loading</div>
         }
         return (
-            <RouteTree store={store} />
+            <RouteTree store={store} indexPath="/ultrasound" />
         )
     }
 }

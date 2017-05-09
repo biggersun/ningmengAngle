@@ -31,6 +31,16 @@ class UltrasoundTable extends Component {
                 name: '盆腔',
                 tips: 'DSC',
             },
+            {
+                id: 4,
+                name: '盆腔',
+                tips: 'DSC',
+            },
+            {
+                id: 5,
+                name: '盆腔',
+                tips: 'DSC',
+            },
         ]
         return (
             <div className="ultrasound-container">

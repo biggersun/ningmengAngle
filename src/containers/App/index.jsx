@@ -1,6 +1,9 @@
 import React, { Component, } from 'react'
+import PropTypes from 'prop-types'
 
-const propTypes = {}
+const propTypes = {
+    children: PropTypes.object.isRequired,
+}
 
 const defaultProps = {}
 
@@ -12,7 +15,9 @@ class App extends Component {
 
     render() {
         return (
-            <div>App</div>
+            <div className="app">
+                {this.props.children}
+            </div>
         )
     }
 }

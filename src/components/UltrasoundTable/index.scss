@@ -4,7 +4,7 @@
     padding: $content-padding;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
     & .ulstrasound-item{
         height: .56rem;
@@ -14,5 +14,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        align-content: space-around;
+        margin-top: .2rem;
+        color: $text-second-color;
     }
 }

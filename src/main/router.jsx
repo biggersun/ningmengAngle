@@ -3,20 +3,22 @@ import PropTypes from 'prop-types'
 import { Provider, } from 'react-redux'
 import { Router, Route, IndexRedirect, browserHistory, } from 'react-router'
 import { syncHistoryWithStore, } from 'react-router-redux'
-import * as router from 'constants/router'
 import { relativeToRoot, } from 'assets/js/util'
 
 import App from '../containers/App'
 import Ultrasound from '../containers/Ultrasound'
+import Article from '../containers/Article'
 
-export default function RouteTree({ store, }) {
+export default function RouteTree({ store, indexPath, }) {
     const history = syncHistoryWithStore(browserHistory, store)
-
     return (
         <Provider store={store}>
             <Router history={history}>
-                <Route path="/" component={App} />
-                <Route path="ultrasound" component={Ultrasound} />
+                <Route path="/" component={App}>
+                    <IndexRedirect to={relativeToRoot(indexPath)} />
+                    <Route path="ultrasound" component={Ultrasound} />
+                    <Route path="article" component={Article} />
+                </Route>
             </Router>
         </Provider>
     )
@@ -24,4 +26,5 @@ export default function RouteTree({ store, }) {
 
 RouteTree.propTypes = {
     store: PropTypes.object.isRequired,
+    indexPath: PropTypes.string.isRequired,
 }

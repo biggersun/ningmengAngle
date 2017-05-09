@@ -11,13 +11,18 @@ class Ultrasound extends Component {
     constructor(props) {
         super(props)
         this.state = {}
+        this.handleSelect = this.handleSelect.bind(this)
+    }
+
+    handleSelect(e) {
+        console.log(e.target.value)
     }
 
     render() {
         const numberWeek = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, ]
         return (
             <div>
-                <UltrasoundSelect weekNumber={numberWeek} />
+                <UltrasoundSelect onChange={this.handleSelect} weekNumber={numberWeek} />
                 <UltrasoundTable />
             </div>
         )

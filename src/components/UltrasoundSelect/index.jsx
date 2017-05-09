@@ -4,6 +4,7 @@ import './index.scss'
 
 const propTypes = {
     weekNumber: PropTypes.array.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
 const defaultProps = {}
@@ -14,6 +15,7 @@ const UltrasoundSelect = props => (
             name="week"
             id="week"
             className="week-select"
+            onChange={props.onChange}
         >
             {props.weekNumber.map(number => <option value={number}>{number}</option>)}
         </select>
