@@ -43,7 +43,7 @@ class UltrasoundTable extends Component {
             },
         ]
         return (
-            <div className="ultrasound-container">
+            <div className="ultrasound-table">
                 {tableList.map(item => <UltrasoundItem
                     key={item.id}
                     name={item.name}

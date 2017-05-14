@@ -1,0 +1,32 @@
+@import 'assets/css/variables.scss';
+
+.ultrasound-indicator{
+    padding-bottom: .54rem;
+
+    & > h1{
+        font-size: .28rem;
+        font-weight: normal;
+        color: $brand-color;
+    }
+
+    & > ul{
+        & > li{
+            display: flex;
+            margin-top: .3rem;
+
+            & em{
+                &.separator{
+                    color: $brand-color;
+                    padding-right: .5rem;
+                }
+            }
+
+            & > .box{
+                width: 50%;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

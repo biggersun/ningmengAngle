@@ -1,7 +1,6 @@
 @import 'assets/css/variables.scss';
 
-.ultrasound-container{
-    padding: $content-padding;
+.ultrasound-table{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
