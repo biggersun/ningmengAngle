@@ -32,7 +32,7 @@ const hotPlugins = [
     new webpack.NamedModulesPlugin(),
 ]
 module.exports = ({
-    apiProxyHost = 'osstest.ktvms.com',
+    apiProxyHost = '182.92.2.176',
     apiProxyPort = '8888',
     apiProxyProtocol = 'http:',
 } = {}) => webpackMerge(commonConfig(), {
@@ -86,7 +86,7 @@ module.exports = ({
             chunks: false,
         },
         proxy: {
-            '/api/*': {
+            '/lemonbaby/*': {
                 target: `${apiProxyProtocol}//${apiProxyHost}:${apiProxyPort}`,
                 headers: {
                     Host: apiProxyHost,
