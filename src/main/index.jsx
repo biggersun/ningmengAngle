@@ -12,7 +12,7 @@ injectTapEventPlugin()
 
 function render() {
     ReactDOM.render(
-        <App />,
+        module.hot ? <AppContainer><App /></AppContainer> : <App />,
         document.getElementById('app-container')
     )
 }

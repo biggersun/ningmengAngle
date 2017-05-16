@@ -4,9 +4,13 @@ import './index.scss'
 
 import UltrasoundItem from '../UltrasoundItem'
 
-const propTypes = {}
+const propTypes = {
+    indicators: PropTypes.array.isRequired,
+}
 
-const defaultProps = {}
+const defaultProps = {
+    indicators: [],
+}
 
 class UltrasoundTable extends Component {
     constructor(props) {
@@ -15,39 +19,13 @@ class UltrasoundTable extends Component {
     }
 
     render() {
-        const tableList = [
-            {
-                id: 1,
-                name: '胎盘',
-                tips: 'DSC',
-            },
-            {
-                id: 2,
-                name: '胸腔',
-                tips: 'FSA',
-            },
-            {
-                id: 3,
-                name: '盆腔',
-                tips: 'DSC',
-            },
-            {
-                id: 4,
-                name: '盆腔',
-                tips: 'DSC',
-            },
-            {
-                id: 5,
-                name: '盆腔',
-                tips: 'DSC',
-            },
-        ]
+        const { indicators, } = this.props
         return (
             <div className="ultrasound-table">
-                {tableList.map(item => <UltrasoundItem
-                    key={item.id}
+                {indicators.map(item => <UltrasoundItem
+                    key={item.nameId}
+                    airticleId={Number(item.nameId)}
                     name={item.name}
-                    tips={item.tips}
                 />)}
             </div>
         )

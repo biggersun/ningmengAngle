@@ -31,12 +31,14 @@ const hotPlugins = [
     // 当模块热替换(HMR)时在浏览器控制台输出对用户更友好的模块名字信息
     new webpack.NamedModulesPlugin(),
 ]
+
 module.exports = ({
     apiProxyHost = '182.92.2.176',
     apiProxyPort = '8888',
     apiProxyProtocol = 'http:',
 } = {}) => webpackMerge(commonConfig(), {
     devtool: 'cheap-source-map',
+
     entry: {
         vendor: [
             'moment',
@@ -51,11 +53,12 @@ module.exports = ({
             appJsPath,
         ] : appJsPath,
     },
+
     output: {
         publicPath,
         filename: 'dist/[name].js',
     },
-    plugins: hot ? hotPlugins : [],
+
     module: {
         rules: [
             {
@@ -76,6 +79,9 @@ module.exports = ({
             },
         ],
     },
+
+    plugins: hot ? hotPlugins : [],
+
     devServer: {
         port,
         host,
@@ -86,7 +92,7 @@ module.exports = ({
             chunks: false,
         },
         proxy: {
-            '/lemonbaby/*': {
+            '/lemonbaby': {
                 target: `${apiProxyProtocol}//${apiProxyHost}:${apiProxyPort}`,
                 headers: {
                     Host: apiProxyHost,

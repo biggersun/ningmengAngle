@@ -3,7 +3,6 @@
         "development": {
             "presets": ["react"],
             "plugins": [
-                ["import", { "libraryName": "antd", "style": true }],
                 "transform-class-properties",
                 "transform-es2015-classes",
                 "transform-object-rest-spread"
@@ -12,7 +11,6 @@
         "development.hot": {
             "presets": ["react"],
             "plugins": [
-                ["import", { "libraryName": "antd", "style": true }],
                 "transform-class-properties",
                 "transform-es2015-classes",
                 "transform-object-rest-spread",
@@ -20,9 +18,8 @@
             ]
         },
         "production": {
-            "presets": ["react", ["env", { modules: false }]],
+            "presets": ["react", ["env", { "modules": false }]],
             "plugins": [
-                ["import", { "libraryName": "antd", "style": true }],
                 "transform-object-rest-spread"
             ]
         }

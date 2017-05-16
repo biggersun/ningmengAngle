@@ -1,3 +1,3 @@
-export const GET_ULTRASOUND = 'GET_ULTRASOUND'
-export const GET_ULTRASOUND_LIST = 'GET_ULTRASOUND_LIST'
+export const GET_VALUE = 'GET_VALUE'
+export const GET_CONTENT = 'GET_CONTENT'
 

@@ -65,11 +65,11 @@ export async function request(input, opt) {
         throw new CustomFetchError(formatErrorStatu, e)
     }
 
-    if (!data || data.errno !== 0) {
+    if (!data) {
         throw new CustomFetchError(logicErrorStatu, data)
     }
 
-    return data.data
+    return data
 }
 
 export function get(url, params = {}, opt = {}) {

@@ -3,18 +3,20 @@
 .ultrasound-table{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 
     & .ulstrasound-item{
+        min-width: 2.06rem;
         height: .56rem;
-        width: 2.06rem;
+        margin-top: .2rem;
+        padding: 0 .2rem;
         border: 1px solid $border-color;
         border-radius: .1rem;
         display: flex;
         justify-content: center;
         align-items: center;
         align-content: space-around;
-        margin-top: .2rem;
         color: $text-second-color;
+        flex-shrink: 0;
     }
 }

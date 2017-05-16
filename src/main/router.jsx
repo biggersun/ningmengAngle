@@ -17,7 +17,7 @@ export default function RouteTree({ store, indexPath, }) {
                 <Route path="/" component={App}>
                     <IndexRedirect to={relativeToRoot(indexPath)} />
                     <Route path="ultrasound" component={Ultrasound} />
-                    <Route path="article" component={Article} />
+                    <Route path="airticle" component={Article} />
                 </Route>
             </Router>
         </Provider>

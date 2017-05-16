@@ -2,9 +2,13 @@ import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 
-const propTypes = {}
+const propTypes = {
+    biaoq: PropTypes.array.isRequired,
+}
 
-const defaultProps = {}
+const defaultProps = {
+    biaoq: [],
+}
 
 class UltrasoundIndicators extends Component {
     constructor(props) {
@@ -13,33 +17,17 @@ class UltrasoundIndicators extends Component {
     }
 
     render() {
-        const indicators = [
-            {
-                id: 1,
-                title: 'BPD双顶',
-                content: '7.50+0.65',
-            },
-            {
-                id: 2,
-                title: 'HC头围',
-                content: '7.50+0.65',
-            },
-            {
-                id: 3,
-                title: 'BPD双顶',
-                content: '7.50+0.65',
-            },
-        ]
+        const { biaoq, } = this.props
         return (
             <div className="ultrasound-indicator">
                 <h1>B超单相关对应值：</h1>
                 <ul>
-                    {indicators.map(item => <li key={item.id}>
+                    {biaoq.map(item => <li key={item.valueId}>
                         <div className="box">
-                            <em>{item.title}</em>
+                            <em>{item.name}</em>
                             <em className="separator">~</em>
                         </div>
-                        <em>{item.content}</em>
+                        <em>{item.value}</em>
                     </li>)}
                 </ul>
             </div>

@@ -1,7 +1,4 @@
-import Loading from '../../components/Loading'
 import * as http from './http'
-
-const loading = Loading.newInstance()
 
 async function request(method, url, params, opt = {}, httpOpt) {
     const {
@@ -11,7 +8,7 @@ async function request(method, url, params, opt = {}, httpOpt) {
     } = opt
 
     if (needLoading) {
-        loading.add()
+        // loading.add()
     }
 
     let res
@@ -24,13 +21,13 @@ async function request(method, url, params, opt = {}, httpOpt) {
         }
 
         if (showErrorMsg) {
-            console.error(e.errno === 4 ? e.data.msg : e.msg)
+            // console.error(e.errno === 4 ? e.data.msg : e.msg)
         }
 
         throw e
     } finally {
         if (needLoading) {
-            loading.remove()
+            // loading.remove()
         }
     }
 

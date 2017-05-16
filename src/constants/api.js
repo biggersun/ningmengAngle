@@ -1,5 +1,5 @@
 const prefix = '/lemonbaby'
 
-export const GET_CYCLE = `${prefix}/findValue`
-export const FIND_CONTENT = `${prefix}/findcontent`
+export const FIND_VALUE = `${prefix}/findValue`
+export const FIND_CONTENT = `${prefix}/findContent`
 

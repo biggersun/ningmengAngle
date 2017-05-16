@@ -1,15 +1,18 @@
 import * as actionTypes from 'constants/actionTypes'
 
-const initState = {
-    fuck: 'adsd',
-}
+const initState = {}
 
-export default function getUltrasound(state = initState, { type, }) {
+export default function getUltrasound(state = initState, { type, payload, }) {
     switch (type) {
-    case actionTypes.GET_ULTRASOUND_LIST:
+    case actionTypes.GET_VALUE:
         return {
             ...state,
-            fuck: 'asdas',
+            ...payload,
+        }
+    case actionTypes.GET_CONTENT:
+        return {
+            ...state,
+            ...payload,
         }
     default:
         return state
