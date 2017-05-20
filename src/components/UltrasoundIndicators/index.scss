@@ -1,10 +1,10 @@
 @import 'assets/css/variables.scss';
 
 .ultrasound-indicator{
-    padding-bottom: .44rem;
+    padding-bottom: 22px;
 
     & > h1{
-        font-size: .28rem;
+        font-size: 14px;
         font-weight: normal;
         color: $brand-color;
     }
@@ -12,12 +12,14 @@
     & > ul{
         & > li{
             display: flex;
-            margin-top: .3rem;
+            margin-top: 15px;
 
             & em{
+                font-size: 14px;
+
                 &.separator{
                     color: $brand-color;
-                    padding-right: .5rem;
+                    padding-right: 25px;
                 }
             }
 

@@ -1,3 +1,5 @@
+@import 'assets/css/variables.scss';
+
 .airticle-container{
-    padding: .48rem .3rem;
+    padding: 24px $content-padding;
 }

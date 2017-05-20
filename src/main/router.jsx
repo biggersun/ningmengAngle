@@ -8,6 +8,7 @@ import { relativeToRoot, } from 'assets/js/util'
 import App from '../containers/App'
 import Ultrasound from '../containers/Ultrasound'
 import Article from '../containers/Article'
+import TimeTable from '../containers/TimeTable'
 
 export default function RouteTree({ store, indexPath, }) {
     const history = syncHistoryWithStore(hashHistory, store)
@@ -18,6 +19,7 @@ export default function RouteTree({ store, indexPath, }) {
                     <IndexRedirect to={relativeToRoot(indexPath)} />
                     <Route path="ultrasound" component={Ultrasound} />
                     <Route path="airticle" component={Article} />
+                    <Route path="timeTable" component={TimeTable} />
                 </Route>
             </Router>
         </Provider>

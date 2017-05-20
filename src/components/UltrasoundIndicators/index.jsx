@@ -22,7 +22,7 @@ class UltrasoundIndicators extends Component {
             <div className="ultrasound-indicator">
                 <h1>B超单相关对应值：</h1>
                 <ul>
-                    {biaoq.map(item => <li key={item.valueId}>
+                    {biaoq.map(item => <li key={item.b_usg_valueId}>
                         <div className="box">
                             <em>{item.name}</em>
                             <em className="separator">~</em>

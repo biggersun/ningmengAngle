@@ -23,8 +23,8 @@ class UltrasoundTable extends Component {
         return (
             <div className="ultrasound-table">
                 {indicators.map(item => <UltrasoundItem
-                    key={item.nameId}
-                    airticleId={Number(item.nameId)}
+                    key={item.b_usgId}
+                    airticleId={Number(item.b_usgId)}
                     name={item.name}
                 />)}
             </div>

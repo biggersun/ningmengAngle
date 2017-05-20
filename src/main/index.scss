@@ -15,11 +15,11 @@ body {
 
 body {
     position: relative;
-    font-size: 0.28rem;
     color: $text-second-color;
     background: $bg-color;
     font-family: -apple-system-font, Helvetica Neue, sans-serif;
     position: relative;
+    font-size: 14px;
 }
 
 ul {
@@ -52,4 +52,11 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 option{
     min-height: 0;
+}
+
+.loading{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

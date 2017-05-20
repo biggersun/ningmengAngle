@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import './index.scss'
 
 const propTypes = {
@@ -13,7 +14,6 @@ const UltrasoundSelect = props => (
         <span>您的孕周是第</span>
         <select
             name="week"
-            id="week"
             className="week-select"
             onChange={props.onChange}
         >

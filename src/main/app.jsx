@@ -1,8 +1,11 @@
 import React, { PureComponent, } from 'react'
+import { LoadMore, } from 'react-weui'
+import 'weui'
+import './index.scss'
+
 import createStore from './store'
 import RouteTree from './router'
 
-import WeUI from 'react-weui'
 
 class App extends PureComponent {
     constructor(props) {
@@ -32,7 +35,7 @@ class App extends PureComponent {
     render() {
         const { initState, store, } = this.state
         if (!initState || !store) {
-            return <div>loading</div>
+            return <LoadMore loading>loading...</LoadMore>
         }
         return (
             <RouteTree store={store} indexPath="/ultrasound" />

@@ -5,7 +5,9 @@ const propTypes = {
     children: PropTypes.object.isRequired,
 }
 
-const defaultProps = {}
+const defaultProps = {
+    children: {},
+}
 
 class App extends Component {
     constructor(props) {

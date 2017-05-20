@@ -37,4 +37,5 @@ UltrasoundItem.propTypes = propTypes
 
 UltrasoundItem.defaultProps = defaultProps
 
+
 export default UltrasoundItem
