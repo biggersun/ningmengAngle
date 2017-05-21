@@ -20,7 +20,7 @@ export function fetchPTPoint(opts = {}) {
     }
 }
 
-export function fetchContent(opts = {}) {
+export function fetchPTContent(opts = {}) {
     return async (dispatch) => {
         const params = Object.assign({}, opts)
         let payload

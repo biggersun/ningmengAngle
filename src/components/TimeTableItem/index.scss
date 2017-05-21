@@ -1,0 +1,48 @@
+@import 'assets/css/variables.scss';
+
+.timetable-item{
+    height: 99px;
+    border-radius: 5px;
+    background-color: #FFF;
+    padding: $content-padding;
+    margin-top: 11px;
+
+    & > div{
+        height: 50%;
+    }
+
+    & > .date-content{
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+
+        & input{
+            width: 120px;
+            color: $brand-color;
+        }
+
+        & .date-icon{
+            width: 17px;
+            height: 17px;
+            background: url(~assets/images/schedule_icon_dataHL.png) no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+
+    & > .content-box{
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > div > span{
+            &:nth-child(2){
+                margin-left: 10px;
+            }
+        }
+
+        & > span{
+            color: $text-gray-color;
+        }
+    }
+}

@@ -8,6 +8,7 @@ import { relativeToRoot, } from 'assets/js/util'
 import App from '../containers/App'
 import Ultrasound from '../containers/Ultrasound'
 import Article from '../containers/Article'
+import PTcontent from '../containers/PTcontent'
 import TimeTable from '../containers/TimeTable'
 
 export default function RouteTree({ store, indexPath, }) {
@@ -20,6 +21,7 @@ export default function RouteTree({ store, indexPath, }) {
                     <Route path="ultrasound" component={Ultrasound} />
                     <Route path="airticle" component={Article} />
                     <Route path="timeTable" component={TimeTable} />
+                    <Route path="ptcontent" component={PTcontent} />
                 </Route>
             </Router>
         </Provider>
