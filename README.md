@@ -22,3 +22,20 @@ yarn run build
 
 `/dist`文件夹，就是打包文件
 
+## 项目路由
+
+
+
+### 看懂B超
+
+```bash
+/#/ultrasound
+```
+
+### 时间表
+
+```bash
+/#/timeTable
+```
+
+
