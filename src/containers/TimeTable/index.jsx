@@ -30,8 +30,24 @@ class TimeTable extends Component {
     render() {
         const { PregnancyTest, } = this.props
         return (
-            <div>
-                {PregnancyTest.map(item => <TimeTableItem key={item.pregnancyTestId} content={item} />)}
+            <div
+                className="timeTable-container"
+            >
+                {PregnancyTest.map((item) => {
+                    const time = new Date().getTime()
+                    const t1 = 604800000 * (item.cycle - 12)
+                    const t2 = new Date(time + t1)
+
+                    const month = t2.getMonth() < 10 ? `0${t2.getMonth()}` : t2.getMonth()
+                    const date = t2.getDate() < 10 ? `0${t2.getDate()}` : t2.getDate()
+
+                    const t3 = `${t2.getFullYear()}-${month}-${date}`
+                    const par = Object.assign({}, {
+                        ...item,
+                        time: t3,
+                    })
+                    return <TimeTableItem key={item.pregnancyTestId} content={par} />
+                })}
             </div>
         )
     }
