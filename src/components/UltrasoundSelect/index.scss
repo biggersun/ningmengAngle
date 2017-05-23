@@ -8,7 +8,7 @@
 
     & .week-select{
         height: 23px;
-        width: 44px;
+        min-width: 44px;
         font-size: 17px;
         border: 1px solid $border-color;
         display: inline-block;

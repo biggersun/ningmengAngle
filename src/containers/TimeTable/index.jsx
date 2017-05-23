@@ -1,6 +1,7 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
+import { changeTitle, } from 'assets/js/util'
 import TimeTableItem from 'components/TimeTableItem'
 
 import './index.scss'
@@ -20,6 +21,10 @@ class TimeTable extends Component {
     constructor(props) {
         super(props)
         this.state = {}
+    }
+
+    componentWillMount() {
+        changeTitle('产检时间表')
     }
 
     componentDidMount() {

@@ -1,5 +1,7 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
+
+import { changeTitle, } from '../../assets/js/util'
 import './index.scss'
 
 import UltrasoundItem from '../UltrasoundItem'
@@ -18,6 +20,10 @@ class UltrasoundTable extends Component {
         this.state = {}
     }
 
+    componentWillMount() {
+        changeTitle('看懂B超')
+    }
+
     render() {
         const { indicators, } = this.props
         return (
@@ -27,6 +33,7 @@ class UltrasoundTable extends Component {
                     airticleId={Number(item.b_usgId)}
                     name={item.name}
                 />)}
+                <div className="ca" />
             </div>
         )
     }

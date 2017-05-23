@@ -15,6 +15,7 @@ const UltrasoundSelect = props => (
         <select
             name="week"
             className="week-select"
+            value="100"
             onChange={props.onChange}
         >
             {props.weekNumber.map(number => <option key={number} value={number}>{number}</option>)}

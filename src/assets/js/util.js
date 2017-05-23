@@ -16,3 +16,8 @@ export function relativeToRoot(path) {
 
     return path.slice(ROOT_PATH.length)
 }
+
+
+export function changeTitle(title) {
+    document.title = title
+}

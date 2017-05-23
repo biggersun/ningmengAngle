@@ -6,7 +6,7 @@
     justify-content: space-between;
 
     & .ulstrasound-item{
-        min-width: 103px;
+        min-width: 100px;
         height: 28px;
         margin-top: 10px;
         padding: 0 10px;
@@ -18,5 +18,12 @@
         align-content: space-around;
         color: $text-second-color;
         flex-shrink: 0;
+
+        &:last-child{
+        }
+    }
+
+    & > .ca{
+        width: 100px;
     }
 }
