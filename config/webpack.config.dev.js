@@ -14,7 +14,7 @@ const mainDir = resolve(srcDir, 'main')
 const appJsPath = resolve(mainDir, 'index.jsx')
 
 const port = 8080
-const host = 'localhost'
+const host = '0.0.0.0'
 const hot = process.env.NODE_PROJECT_HOT === 'true'
 
 process.env.BABEL_ENV = hot ? 'development.hot' : 'development'
@@ -88,6 +88,7 @@ module.exports = ({
         hot,
         contentBase: distDir,
         historyApiFallback: true,
+        disableHostCheck: true,
         stats: {
             chunks: false,
         },
