@@ -3,34 +3,34 @@ import * as api from 'constants/api'
 import { get, post, } from 'assets/js/request'
 import { actionCreator, } from 'assets/js/util'
 
-const renderTable = actionCreator(actionTypes.GET_PTPOINT)
-const renderContent = actionCreator(actionTypes.GET_PTCONTENT)
+const renderVaccineTimeTable = actionCreator(actionTypes.FIND_VACCINETEST)
+const renderVaccineContent = actionCreator(actionTypes.FIND_VCONTENT)
 
-export function fetchPTPoint(opts = {}) {
+export function fetchVaccineTimeTable(opts = {}) {
     return async (dispatch) => {
         const params = Object.assign({}, opts)
         let payload
 
         try {
-            payload = await get(api.FIND_PTPOINT, params)
+            payload = await get(api.FIND_VACCINETEST, params)
         } catch (e) {
             return
         }
-        dispatch(renderTable(payload))
+        dispatch(renderVaccineTimeTable(payload))
     }
 }
 
-export function fetchPTContent(opts = {}) {
+export function fetchVaccineContent(opts = {}) {
     return async (dispatch) => {
         const params = Object.assign({}, opts)
         let payload
 
         try {
-            payload = await get(api.FIND_PTCONTENT, params)
+            payload = await get(api.FIND_VCONTENT, params)
         } catch (e) {
             return
         }
-        dispatch(renderContent(payload))
+        dispatch(renderVaccineContent(payload))
     }
 }
 

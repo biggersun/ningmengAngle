@@ -1,7 +1,7 @@
 import * as actionTypes from 'constants/actionTypes'
 import * as api from 'constants/api'
-import { get, post } from 'assets/js/request'
-import { actionCreator } from 'assets/js/util'
+import { get, post, } from 'assets/js/request'
+import { actionCreator, } from 'assets/js/util'
 
 const renderValue = actionCreator(actionTypes.GET_VALUE)
 const renderContent = actionCreator(actionTypes.GET_CONTENT)
