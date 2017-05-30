@@ -1,6 +1,7 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
+import { changeTitle, } from 'assets/js/util'
 import * as action from '../../actions/vaccineTimeTable'
 
 import VaccineTimeTableItem from '../../components/VaccineTimeTableItem'
@@ -18,6 +19,10 @@ class VaccineTimeTable extends Component {
         super(props)
         this.state = {
         }
+    }
+
+    componentWillMount() {
+        changeTitle('疫苗时间表')
     }
 
     componentDidMount() {
@@ -128,7 +133,6 @@ VaccineTimeTable.propTypes = propTypes
 VaccineTimeTable.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }) => {
-    console.log(state)
     const { vaccineTimeTable, } = state
     return {
         ...state,

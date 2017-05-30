@@ -1,0 +1,50 @@
+@import 'assets/css/variables.scss';
+
+.vaccine-container{
+    box-sizing: border-box;
+    height: 38px;
+    border-top: 1px solid $border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div{
+        width: 50%;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        & > div{
+            display: flex;
+            align-items: center;
+
+            & > span{
+                margin-left: 5px;
+            }
+        }
+
+        & .checkIcon{
+            width: 16px;
+            height: 16px;
+            background: url(~assets/images/Check_icon_rig.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        &  .isRequired{
+            box-sizing: border-box;
+            height: 16px;
+            font-size: 12px;
+            color: #FFF;
+            background-color: $brand-color;
+            border-radius: 8px;
+            padding: 0 5px;
+            line-height: 16px;
+        }
+    }
+
+    & > .purpose{
+        font-size: 13px;
+        color: $text-gray-color;
+    }
+}

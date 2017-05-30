@@ -20,7 +20,7 @@ class VaccineTimeTableItem extends Component {
     render() {
         const { stage, content, } = this.props
         return (
-            <div>
+            <div className="vaccineTimeTableItem-container">
                 <h1>{stage}</h1>
                 {content.map(vaccine => <VaccineItem key={vaccine.vaccineId} vaccine={vaccine} />)}
             </div>

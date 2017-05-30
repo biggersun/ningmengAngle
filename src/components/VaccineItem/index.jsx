@@ -1,5 +1,6 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
+import { hashHistory, } from 'react-router'
 import './index.scss'
 
 const propTypes = {
@@ -13,16 +14,27 @@ class VaccineItem extends Component {
         super(props)
         this.state = {
         }
+        this.handleHref = this.handleHref.bind(this)
+    }
+
+    handleHref() {
+        const { vaccine: { vaccineId, }, } = this.props
+        hashHistory.push(`vaccineContent?vaccineId=${vaccineId}`)
     }
 
     render() {
         const { vaccine, } = this.props
         return (
-            <div className="vaccine-container">
-                <span>{vaccine.name}</span>
-                <span>第{vaccine.number}次</span>
-                {vaccine.isRequired === 1 ? <span>必打</span> : ''}
-                <span>{vaccine.purpose}</span>
+            <div className="vaccine-container" onClick={this.handleHref}>
+                <div>
+                    <div>
+                        <div className="checkIcon" />
+                        <span>{vaccine.name}</span>
+                    </div>
+                    <span>第{vaccine.number}次</span>
+                    {vaccine.isRequired === 1 ? <span className="isRequired">必打</span> : ''}
+                </div>
+                <span className="purpose">{vaccine.purpose}</span>
             </div>
         )
     }
