@@ -7,13 +7,13 @@ import './index.scss'
 
 const propTypes = {
     fetchVaccineContent: PropTypes.func.isRequired,
-    vaccineId: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
     content: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
 }
 
 const defaultProps = {
-    vaccineId: 0,
+    id: 0,
     content: '',
     name: '',
 }
@@ -30,8 +30,8 @@ class VaccineContent extends Component {
     }
 
     handFetchContent() {
-        const { fetchVaccineContent, vaccineId, } = this.props
-        const params = { id: vaccineId, }
+        const { fetchVaccineContent, id, } = this.props
+        const params = { id, }
         fetchVaccineContent(params)
     }
 
@@ -53,12 +53,12 @@ VaccineContent.propTypes = propTypes
 VaccineContent.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }, { location, }) => {
-    const { vaccineId, } = location.query
+    const { id, } = location.query
     const { vaccineTimeTable: { content, name, }, } = state
     return {
         content,
         name,
-        vaccineId: Number(vaccineId),
+        id: Number(id),
     }
 }
 

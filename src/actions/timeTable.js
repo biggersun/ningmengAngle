@@ -1,6 +1,6 @@
 import * as actionTypes from 'constants/actionTypes'
 import * as api from 'constants/api'
-import { get, post, } from 'assets/js/request'
+import { get, } from 'assets/js/request'
 import { actionCreator, } from 'assets/js/util'
 
 const renderTable = actionCreator(actionTypes.GET_PTPOINT)

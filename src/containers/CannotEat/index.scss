@@ -1,0 +1,46 @@
+@import 'assets/css/variables.scss';
+
+.cannoteat-container{
+    & > .list-container{
+        display: flex;
+        flex-flow: row wrap;
+        background-color: #FFF;
+
+        & > .cannotLabel{
+            width: 25%;
+            height: 111px;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding-bottom: 26px;
+            position: relative;
+            color: $text-gray-color;
+
+            &:after{
+                content: " ";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 1px;
+                border-top: 1px solid #D7D6DC;
+                color: #D7D6DC;
+                -webkit-transform-origin: 0 0;
+                transform-origin: 0 0;
+                -webkit-transform: scaleY(0.5);
+                transform: scaleY(0.5);
+            }
+
+            &:nth-child(n+9):after{
+                border: 0;
+            }
+
+            & > img{
+                height: 28px;
+                margin-top: 25px;
+            }
+        }
+    }
+}

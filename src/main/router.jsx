@@ -12,6 +12,9 @@ import PTcontent from '../containers/PTcontent'
 import TimeTable from '../containers/TimeTable'
 import VaccineTimeTable from '../containers/VaccineTimeTable'
 import VaccineContent from '../containers/VaccineContent'
+import CannotEat from '../containers/CannotEat'
+import FoodList from '../containers/FoodList'
+import FoodContent from '../containers/FoodContent'
 
 export default function RouteTree({ store, indexPath, }) {
     const history = syncHistoryWithStore(hashHistory, store)
@@ -26,6 +29,9 @@ export default function RouteTree({ store, indexPath, }) {
                     <Route path="ptcontent" component={PTcontent} />
                     <Route path="vaccine" component={VaccineTimeTable} />
                     <Route path="vaccineContent" component={VaccineContent} />
+                    <Route path="cannotEat" component={CannotEat} />
+                    <Route path="foodList" component={FoodList} />
+                    <Route path="foodContent" component={FoodContent} />
                 </Route>
             </Router>
         </Provider>

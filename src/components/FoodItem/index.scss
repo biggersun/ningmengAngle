@@ -1,0 +1,111 @@
+@import 'assets/css/variables.scss';
+
+.foodItem-container{
+    height: 84px;
+    padding: 9px $content-padding;
+    background-color: #FFF;
+    margin-bottom: 5px;
+    display: flex;
+
+    & > .img-box{
+        overflow: hidden;
+        width: 66px;
+        flex-shrink: 0;
+
+        & > img{
+            width: 66px;
+            height: 66px;
+            border-radius: 5px;
+        }
+    }
+
+    & > .content{
+        flex-grow: 1;
+        margin-left: 10px;
+
+        & > .top-content{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            padding: 10px 0;
+
+            &:after{
+                content: " ";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                height: 1px;
+                border-top: 1px solid #D7D6DC;
+                color: #D7D6DC;
+                -webkit-transform-origin: 0 0;
+                transform-origin: 0 0;
+                -webkit-transform: scaleY(0.5);
+                transform: scaleY(0.5);
+            }
+
+            & > .name{
+                color: $text-color;
+                font-size: 16px;
+            }
+
+            & > .name2-box{
+                display: flex;
+                align-items: center;
+                font-size: 13px;
+                color: $text-gray-color;
+
+                &:after{
+                    content: '';
+                    display: block;
+                    width: 6px;
+                    height: 12px;
+                    background: url(~assets/images/staple_icon_right.png) no-repeat;
+                    background-size: 100% 100%;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        & > .bottom-content{
+            display: flex;
+            font-size: 12px;
+            color: $text-gray-color;
+            align-items: center;
+            justify-content: space-between;
+
+            & > div{
+                display: flex;
+                align-items: center;
+
+                & > div{
+                    margin-right: 6px;
+
+                    &.status-icon1{
+                        width: 16px;
+                        height: 16px;
+                        background: url(~assets/images/Check_icon_rig.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+
+                    &.status-icon2{
+                        width: 16px;
+                        height: 16px;
+                        background: url(~assets/images/rice_icon_no.png) no-repeat;
+                        background-size: 100% 100%;
+                    }
+
+                    &.status-icon3{
+                        padding: 0 3px;
+                        font-size: 10px;
+                        color: $brand-color;
+                        border: 1px solid $brand-color;
+                        border-radius: 10px;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    }
+}
