@@ -1,5 +1,97 @@
 @import 'assets/css/variables.scss';
 
-.vaccineContent-container{
-    padding: $content-padding;
+.foodContent-container{
+    & > .image{
+        width: 100%;
+        height: 110px;
+        overflow: hidden;
+
+        & > img{
+            width: 100%;
+        }
+    }
+
+    & > .title{
+        padding-left: $content-padding;
+        background-color: #FFF;
+
+        & > p{
+            height: 40px;
+            border-bottom: 1px solid $border-color;
+            font-size: 16px;
+            color: $text-color;
+            line-height: 40px;
+        }
+    }
+
+    & > .content{
+        & > .item{
+            padding-top: 19px;
+            padding-bottom: 12px;
+            padding-left: $content-padding;
+            background-color: #FFF;
+            margin-bottom: 5px;
+
+            & > h1{
+                font-size: 16px;
+            }
+
+            & > .item-content{
+                font-size: 13px;
+                color: $text-gray-color;
+                margin-top: 11px;
+
+                & > .cannotEat-box{
+                    width: 70px;
+                    float: left;
+
+                    & > div{
+                        display: flex;
+                        align-items: center;
+                        color: $brand-color;
+
+                        &.status-icon1::before{
+                            content: '';
+                            display: block;
+                            width: 16px;
+                            height: 16px;
+                            background: url(~assets/images/Check_icon_rig.png) no-repeat;
+                            background-size: 100% 100%;
+                            margin-right: 6px;
+                        }
+
+                        &.status-icon2::before{
+                            content: '';
+                            display: block;
+                            width: 16px;
+                            height: 16px;
+                            background: url(~assets/images/rice_icon_no.png) no-repeat;
+                            background-size: 100% 100%;
+                            margin-right: 6px;
+                        }
+
+                        &.status-icon3{
+                            padding: 0 3px;
+                            font-size: 10px;
+                            color: $brand-color;
+                            border: 1px solid $brand-color;
+                            border-radius: 10px;
+                            line-height: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > .tips{
+        background-color: #FFF;
+        padding: $content-padding;
+        color: $text-gray-color;
+
+        & > h1{
+            font-size: 16px;
+            color: $brand-color;
+        }
+    }
 }
