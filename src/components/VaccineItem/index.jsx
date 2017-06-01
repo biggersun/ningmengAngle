@@ -31,7 +31,6 @@ class VaccineItem extends Component {
                         <div className="checkIcon" />
                         <span>{vaccine.name}</span>
                     </div>
-                    <span>第{vaccine.number}次</span>
                     {vaccine.isRequired === 1 ? <span className="isRequired">必打</span> : ''}
                 </div>
                 <span className="purpose">{vaccine.purpose}</span>
@@ -45,3 +44,5 @@ VaccineItem.propTypes = propTypes
 VaccineItem.defaultProps = defaultProps
 
 export default VaccineItem
+
+// <span>第{vaccine.number}次</span>

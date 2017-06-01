@@ -4,6 +4,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    padding-bottom: $content-padding;
 
     & .ulstrasound-item{
         min-width: 100px;
@@ -18,9 +19,6 @@
         align-content: space-around;
         color: $text-second-color;
         flex-shrink: 0;
-
-        &:last-child{
-        }
     }
 
     & > .ca{

@@ -2,11 +2,11 @@ import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
 import { changeTitle, } from 'assets/js/util'
-import * as actions from '../../actions/vaccineTimeTable'
+import * as actions from '../../actions/cannotEat'
 import './index.scss'
 
 const propTypes = {
-    fetchVaccineContent: PropTypes.func.isRequired,
+    fetchFoodContent: PropTypes.func.isRequired,
     id: PropTypes.number.isRequired,
     content: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -18,7 +18,7 @@ const defaultProps = {
     name: '',
 }
 
-class VaccineContent extends Component {
+class FoodContent extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -30,9 +30,9 @@ class VaccineContent extends Component {
     }
 
     handFetchContent() {
-        const { fetchVaccineContent, id, } = this.props
+        const { fetchFoodContent, id, } = this.props
         const params = { id, }
-        fetchVaccineContent(params)
+        fetchFoodContent(params)
     }
 
     render() {
@@ -41,16 +41,15 @@ class VaccineContent extends Component {
         changeTitle(name)
         return (
             <div
-                className="vaccineContent-container"
-                dangerouslySetInnerHTML={{ __html: content, }}
+                className="FoodContent-container"
             />
         )
     }
 }
 
-VaccineContent.propTypes = propTypes
+FoodContent.propTypes = propTypes
 
-VaccineContent.defaultProps = defaultProps
+FoodContent.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }, { location, }) => {
     const { id, } = location.query
@@ -64,5 +63,5 @@ const mapStateToProps = ({ ...state }, { location, }) => {
 
 const mapDispatchToProps = { ...actions, }
 
-export default connect(mapStateToProps, mapDispatchToProps)(VaccineContent)
+export default connect(mapStateToProps, mapDispatchToProps)(FoodContent)
 

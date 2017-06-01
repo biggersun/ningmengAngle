@@ -1,13 +1,24 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
+import { connect, } from 'react-redux'
+import * as actions from '../../actions/cannotEat'
 
 import SearchBar from '../../components/SearchBar'
 import FoodItem from '../../components/FoodItem'
 import './index.scss'
 
-const propTypes = {}
+const propTypes = {
+    fetchFoodType: PropTypes.func.isRequired,
+    content: PropTypes.array.isRequired,
+    imagePaths: PropTypes.object.isRequired,
+    id: PropTypes.number.isRequired,
+}
 
-const defaultProps = {}
+const defaultProps = {
+    id: 0,
+    content: [],
+    imagePaths: {},
+}
 
 class FoodList extends Component {
     constructor(props) {
@@ -16,69 +27,28 @@ class FoodList extends Component {
         }
     }
 
+    componentDidMount() {
+        this.handleFetch()
+    }
+
+    handleFetch() {
+        const { fetchFoodType, id, } = this.props
+        const params = {
+            id,
+        }
+        fetchFoodType(params)
+    }
+
     render() {
-        const arr = [
-            {
-                id: 1,
-                name: '大米',
-                name2: '稻米',
-                list: [
-                    {
-                        id: 1,
-                        status: 1,
-                        name: '孕妈',
-                    },
-                    {
-                        id: 2,
-                        status: 1,
-                        name: '坐月子',
-                    },
-                    {
-                        id: 3,
-                        status: 2,
-                        name: '哺乳',
-                    },
-                    {
-                        id: 4,
-                        status: 3,
-                        name: '婴幼儿',
-                    },
-                ],
-            },
-            {
-                id: 2,
-                name: '花生',
-                name2: '落花生，长生果，泥豆, 番豆',
-                list: [
-                    {
-                        id: 1,
-                        status: 1,
-                        name: '孕妈',
-                    },
-                    {
-                        id: 2,
-                        status: 1,
-                        name: '坐月子',
-                    },
-                    {
-                        id: 3,
-                        status: 2,
-                        name: '哺乳',
-                    },
-                    {
-                        id: 4,
-                        status: 3,
-                        name: '婴幼儿',
-                    },
-                ],
-            },
-        ]
+        const { content, imagePaths, } = this.props
         return (
             <div>
                 <SearchBar
                     placeholder="搜索食物"
                 />
-                {arr.map(item => <FoodItem key={item.id} content={item} />)}
+                {content.map(item => <FoodItem
+                    key={item.canEatId} icon={imagePaths !== [] ? imagePaths[item.imagePath] : ''} content={item}
+                />)}
             </div>
         )
     }
@@ -88,4 +58,18 @@ FoodList.propTypes = propTypes
 
 FoodList.defaultProps = defaultProps
 
-export default FoodList
+const mapStateToProps = ({ ...state }, { location, }) => {
+    const { id, } = location.query
+    const { foodList: { content, name, imagePaths, }, } = state
+
+    return {
+        content,
+        name,
+        imagePaths,
+        id: Number(id),
+    }
+}
+
+const mapDispatchToProps = { ...actions, }
+
+export default connect(mapStateToProps, mapDispatchToProps)(FoodList)

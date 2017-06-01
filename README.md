@@ -29,13 +29,24 @@ yarn run build
 ### 看懂B超
 
 ```bash
-/#/ultrasound
+#/ultrasound
 ```
 
 ### 时间表
 
 ```bash
-/#/timeTable
+#/timeTable
 ```
 
+### 疫苗
+
+```bash
+#/vaccine
+```
+
+### 能不能吃
+
+```bash
+#/cannotEat
+```
 

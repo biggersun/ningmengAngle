@@ -54,7 +54,7 @@ VaccineContent.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }, { location, }) => {
     const { vaccineId, } = location.query
-    const { vaccineTimeTable: { content, name, }, } = state
+    const { vaccineContent: { content, name, }, } = state
     return {
         content,
         name,

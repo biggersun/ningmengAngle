@@ -10,9 +10,12 @@ import './index.scss'
 
 const propTypes = {
     fetchVaccineTimeTable: PropTypes.func.isRequired,
+    vaccineTimeTable: PropTypes.object.isRequired,
 }
 
-const defaultProps = {}
+const defaultProps = {
+    vaccineTimeTable: {},
+}
 
 class VaccineTimeTable extends Component {
     constructor(props) {
@@ -31,11 +34,7 @@ class VaccineTimeTable extends Component {
 
     handleFetch() {
         const { fetchVaccineTimeTable, } = this.props
-        const stage = '出生当天'
-        const params = {
-            stage,
-        }
-        fetchVaccineTimeTable(params)
+        fetchVaccineTimeTable()
     }
 
     render() {
@@ -116,9 +115,10 @@ class VaccineTimeTable extends Component {
                 content: [ { purpose: '预防结核病', isRequired: 1, stage: '出生当天', name: '卡介苗', vaccineId: 1, },
                 { purpose: '预防乙型肝炎', isRequired: 1, stage: '出生当天', name: '乙肝疫苗', vaccineId: 2, }, ],
             }, ]
+        const { vaccineTimeTable: { content = [], }, } = this.props
         return (
             <div>
-                {arr.map(item => <VaccineTimeTableItem
+                {content.map(item => <VaccineTimeTableItem
                     key={item.id}
                     stage={item.stage}
                     content={item.content}
@@ -135,7 +135,6 @@ VaccineTimeTable.defaultProps = defaultProps
 const mapStateToProps = ({ ...state }) => {
     const { vaccineTimeTable, } = state
     return {
-        ...state,
         vaccineTimeTable,
     }
 }

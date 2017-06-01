@@ -3,14 +3,15 @@ import PropTypes from 'prop-types'
 import { hashHistory, } from 'react-router'
 
 import './index.scss'
-import icon from '../../assets/images/staple_img_Corn.png'
 
 const propTypes = {
     content: PropTypes.object.isRequired,
+    icon: PropTypes.string.isRequired,
 }
 
 const defaultProps = {
     content: {},
+    icon: '',
 }
 
 function handleStatus(status) {
@@ -32,12 +33,12 @@ class FoodItem extends Component {
     }
 
     handleClick() {
-        const { content: { id, }, } = this.props
-        hashHistory.push(`foodContent?id=${id}`)
+        const { content: { canEatId, }, } = this.props
+        hashHistory.push(`foodContent?id=${canEatId}`)
     }
 
     render() {
-        const { content, } = this.props
+        const { content, icon, } = this.props
         return (
             <div
                 className="foodItem-container"
@@ -54,14 +55,22 @@ class FoodItem extends Component {
                         </div>
                     </div>
                     <div className="bottom-content">
-                        {content.list.map(item =>
-                            <div key={item.id}>
-                                <div className={handleStatus(item.status)}>
-                                    {item.status === 3 ? '12+' : ''}
-                                </div>
-                                <span>{item.name}</span>
-                            </div>
-                        )}
+                        <div>
+                            <div className={handleStatus(content.stageA)} />
+                            <span>孕妈</span>
+                        </div>
+                        <div>
+                            <div className={handleStatus(content.stageB)} />
+                            <span>坐月子</span>
+                        </div>
+                        <div>
+                            <div className={handleStatus(content.stageC)} />
+                            <span>哺乳</span>
+                        </div>
+                        <div>
+                            <div className={handleStatus(content.stageD)} />
+                            <span>婴幼儿</span>
+                        </div>
                     </div>
                 </div>
             </div>
