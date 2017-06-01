@@ -26,14 +26,14 @@
 
     & > .content{
         & > .item{
-            padding-top: 19px;
-            padding-bottom: 12px;
-            padding-left: $content-padding;
+            padding: 19px $content-padding 12px $content-padding;
             background-color: #FFF;
             margin-bottom: 5px;
 
             & > h1{
                 font-size: 16px;
+                font-weight: normal;
+                color: $text-color;
             }
 
             & > .item-content{
@@ -90,6 +90,7 @@
         color: $text-gray-color;
 
         & > h1{
+            font-weight: normal;
             font-size: 16px;
             color: $brand-color;
         }
