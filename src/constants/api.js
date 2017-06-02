@@ -9,3 +9,5 @@ export const FIND_VACCINETEST = `${prefix}/findVaccineTest` // vaccine timeTable
 
 export const FIND_EAT = `${prefix}/findEat`
 export const FIND_EAT2 = `${prefix}/findEat2`
+
+export const SEARCH_FOOD = `${prefix}/find`

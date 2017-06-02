@@ -14,6 +14,11 @@ export default function foodList(state = initState, { type, payload, }) {
             ...state,
             ...payload,
         }
+    case actionTypes.SEARCH_FOOD:
+        return {
+            ...state,
+            ...payload,
+        }
     default:
         return state
     }

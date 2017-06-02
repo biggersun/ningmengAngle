@@ -53,6 +53,38 @@ class FoodContent extends Component {
             alias_,
             tips,
         } = content[0] || []
+        let $stageA
+        let $stageB
+        let $stageC
+        let $stageD
+        if (stageA === 0) {
+            $stageA = <div className="status-icon2">不能吃</div>
+        } else if (stageA === 1) {
+            $stageA = <div className="status-icon1">能吃</div>
+        } else if (stageA === 2) {
+            $stageA = <div className="status-icon3">少吃</div>
+        }
+        if (stageB === 0) {
+            $stageB = <div className="status-icon2">不能吃</div>
+        } else if (stageB === 1) {
+            $stageB = <div className="status-icon1">能吃</div>
+        } else if (stageB === 2) {
+            $stageB = <div className="status-icon3">少吃</div>
+        }
+        if (stageC === 0) {
+            $stageC = <div className="status-icon2">不能吃</div>
+        } else if (stageC === 1) {
+            $stageC = <div className="status-icon1">能吃</div>
+        } else if (stageC === 2) {
+            $stageC = <div className="status-icon3">少吃</div>
+        }
+        if (stageD === 0) {
+            $stageD = <div className="status-icon2">不能吃</div>
+        } else if (stageD === 1) {
+            $stageD = <div className="status-icon1">能吃</div>
+        } else if (stageD === 2) {
+            $stageD = <div className="status-icon3">少吃</div>
+        }
         return (
             <div className="foodContent-container">
                 <div className="image">
@@ -66,10 +98,7 @@ class FoodContent extends Component {
                         <h1>孕妇能吃吗？</h1>
                         <div className="item-content">
                             <div className="cannotEat-box">
-                                {stageA === 1 ?
-                                    <div className="status-icon1">能吃</div> :
-                                    <div className="status-icon2">不能吃</div>
-                                }
+                                {$stageA}
                             </div>
                             <p>{contentA}</p>
                         </div>
@@ -78,10 +107,7 @@ class FoodContent extends Component {
                         <h1>坐月子能吃吗？</h1>
                         <div className="item-content">
                             <div className="cannotEat-box">
-                                {stageB === 1 ?
-                                    <div className="status-icon1">能吃</div> :
-                                    <div className="status-icon2">不能吃</div>
-                                }
+                                {$stageB}
                             </div>
                             <p>{contentB}</p>
                         </div>
@@ -90,10 +116,7 @@ class FoodContent extends Component {
                         <h1>哺乳能吃吗？</h1>
                         <div className="item-content">
                             <div className="cannotEat-box">
-                                {stageC === 1 ?
-                                    <div className="status-icon1">能吃</div> :
-                                    <div className="status-icon2">不能吃</div>
-                                }
+                                {$stageC}
                             </div>
                             <p>{contentC}</p>
                         </div>
@@ -102,10 +125,7 @@ class FoodContent extends Component {
                         <h1>婴儿能吃吗？</h1>
                         <div className="item-content">
                             <div className="cannotEat-box">
-                                {stageD === 1 ?
-                                    <div className="status-icon1">能吃</div> :
-                                    <div className="status-icon2">不能吃</div>
-                                }
+                                {$stageD}
                             </div>
                             <p>{contentD}</p>
                         </div>

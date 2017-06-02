@@ -1,8 +1,15 @@
 import React, { Component, } from 'react'
+import PropTypes from 'prop-types'
 import { SearchBar, } from 'react-weui'
 
 import 'weui'
 import './index.scss'
+
+
+const propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    handleCancel: PropTypes.func.isRequired,
+}
 
 export default class SearchBar1 extends Component {
     constructor(props) {
@@ -11,18 +18,15 @@ export default class SearchBar1 extends Component {
             searchText: '',
             results: [],
         }
-        this.handleChange = this.handleChange.bind(this)
-    }
-
-    handleChange(text, e) {
-        console.log(text)
     }
 
     render() {
+        const { handleSubmit, handleCancel, } = this.props
         return (
             <SearchBar
                 className="searchBar"
-                onChange={this.handleChange}
+                onSubmit={handleSubmit}
+                onCancel={handleCancel}
                 placeholder="搜索食物"
                 lang={{
                     cancel: '取消',
@@ -31,3 +35,5 @@ export default class SearchBar1 extends Component {
         )
     }
 }
+
+SearchBar1.propTypes = propTypes

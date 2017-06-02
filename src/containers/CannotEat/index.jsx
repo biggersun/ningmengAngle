@@ -1,8 +1,12 @@
 import React, { Component, } from 'react'
+import PropTypes from 'prop-types'
 import { changeTitle, } from 'assets/js/util'
-
+import { connect, } from 'react-redux'
 import SearchBar from 'components/SearchBar'
 import CannotLabel from 'components/CannotLabel'
+import FoodItem from 'components/FoodItem'
+import * as actions from '../../actions/cannotEat'
+
 import './index.scss'
 
 import icon1 from '../../assets/images/eat_icon_1.png'
@@ -18,19 +22,44 @@ import icon10 from '../../assets/images/eat_icon_10.png'
 import icon11 from '../../assets/images/eat_icon_11.png'
 import icon12 from '../../assets/images/eat_icon_12.png'
 
-const propTypes = {}
+const propTypes = {
+    searchFood: PropTypes.func.isRequired,
+    foodList: PropTypes.object.isRequired,
+}
 
-const defaultProps = {}
+const defaultProps = {
+    foodList: {},
+}
 
 class CannotEat extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            status: 1,
         }
+        this.handleSearch = this.handleSearch.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
     }
 
     componentWillMount() {
         changeTitle('能不能吃')
+    }
+
+    handleSearch(text) {
+        const { searchFood, } = this.props
+        const params = {
+            name: text,
+        }
+        searchFood(params)
+        this.setState({
+            status: 2,
+        })
+    }
+
+    handleCancel() {
+        this.setState({
+            status: 1,
+        })
     }
 
     render() {
@@ -96,13 +125,25 @@ class CannotEat extends Component {
                 name: '补品/草药',
             },
         ]
+        const { status, } = this.state
+        const { foodList: { content = [], imagePaths, }, } = this.props
         return (
-            <div className="cannoteat-container">
-                <SearchBar
-                    placeholder="搜索食物"
-                />
-                <div className="list-container">
-                    {res.map(item => <CannotLabel key={item.id} content={item} />)}
+            <div>
+                <div className="cannoteat-container">
+                    <SearchBar
+                        placeholder="搜索食物"
+                        handleSubmit={this.handleSearch}
+                        handleCancel={this.handleCancel}
+                    />
+                    {status === 1 ?
+                        <div className="list-container">
+                            {res.map(item => <CannotLabel key={item.id} content={item} />)}
+                        </div> :
+                        content.map(item => <FoodItem
+                            key={item.canEatId} icon={imagePaths !== [] ?
+                                imagePaths[item.imagePath] : ''} content={item}
+                        />)
+                    }
                 </div>
             </div>
         )
@@ -113,4 +154,14 @@ CannotEat.propTypes = propTypes
 
 CannotEat.defaultProps = defaultProps
 
-export default CannotEat
+const mapStateToProps = ({ ...state }) => {
+    const { foodList, } = state
+    return {
+        foodList,
+    }
+}
+
+const mapDispatchToProps = { ...actions, }
+
+export default connect(mapStateToProps, mapDispatchToProps)(CannotEat)
+

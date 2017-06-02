@@ -16,11 +16,10 @@
         background-color: #FFF;
 
         & > p{
-            height: 40px;
             border-bottom: 1px solid $border-color;
             font-size: 16px;
             color: $text-color;
-            line-height: 40px;
+            padding: 5px 0;
         }
     }
 
@@ -70,13 +69,14 @@
                             margin-right: 6px;
                         }
 
-                        &.status-icon3{
-                            padding: 0 3px;
-                            font-size: 10px;
-                            color: $brand-color;
-                            border: 1px solid $brand-color;
-                            border-radius: 10px;
-                            line-height: 1;
+                        &.status-icon3::before{
+                            content: '';
+                            display: block;
+                            width: 16px;
+                            height: 16px;
+                            background: url(~assets/images/staple_icon_3.png) no-repeat;
+                            background-size: 100% 100%;
+                            margin-right: 6px;
                         }
                     }
                 }

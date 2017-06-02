@@ -9,7 +9,5 @@ export const FIND_VACCINETEST = 'FIND_VACCINETEST'
 
 export const FIND_EAT = 'FIND_EAT'
 export const FIND_EAT2 = 'FIND_EAT2'
-
-
-
+export const SEARCH_FOOD = 'SEARCH_FOOD'
 
