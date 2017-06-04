@@ -17,7 +17,7 @@ const defaultProps = {
 function handleStatus(status) {
     if (status === 1) {
         return 'status-icon1'
-    } else if (status === 2) {
+    } else if (status === 0) {
         return 'status-icon2'
     }
     return 'status-icon3'

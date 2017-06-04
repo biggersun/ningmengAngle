@@ -38,7 +38,7 @@ class App extends PureComponent {
             return <LoadMore loading>loading...</LoadMore>
         }
         return (
-            <RouteTree store={store} indexPath="/ultrasound" />
+            <RouteTree store={store} indexPath="/index" />
         )
     }
 }

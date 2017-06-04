@@ -6,6 +6,7 @@ import { syncHistoryWithStore, } from 'react-router-redux'
 import { relativeToRoot, } from 'assets/js/util'
 
 import App from '../containers/App'
+import Index from '../containers/Index'
 import Ultrasound from '../containers/Ultrasound'
 import Article from '../containers/Article'
 import PTcontent from '../containers/PTcontent'
@@ -23,6 +24,7 @@ export default function RouteTree({ store, indexPath, }) {
             <Router history={history}>
                 <Route path="/" component={App}>
                     <IndexRedirect to={relativeToRoot(indexPath)} />
+                    <Route path="index" component={Index} />
                     <Route path="ultrasound" component={Ultrasound} />
                     <Route path="airticle" component={Article} />
                     <Route path="timeTable" component={TimeTable} />

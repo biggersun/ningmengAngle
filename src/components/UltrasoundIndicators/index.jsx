@@ -24,10 +24,10 @@ class UltrasoundIndicators extends Component {
                 <ul>
                     {biaoq.map(item => <li key={item.b_usg_valueId}>
                         <div className="box">
-                            <em>{item.name}({item.unit})</em>
+                            <em>{item.name}</em>
                             <em className="separator">~</em>
                         </div>
-                        <em>{item.value}</em>
+                        <em>{item.value}（{item.unit}）</em>
                     </li>)}
                 </ul>
             </div>
