@@ -1,10 +1,11 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
-import * as actions from '../../actions/cannotEat'
+import * as actions from 'actions/cannotEat'
 
-import SearchBar from '../../components/SearchBar'
-import FoodItem from '../../components/FoodItem'
+import SearchBar from 'components/SearchBar'
+import FoodItem from 'components/FoodItem'
+import Title from 'components/Title'
 import './index.scss'
 
 const propTypes = {
@@ -55,9 +56,10 @@ class FoodList extends Component {
     }
 
     render() {
-        const { content, imagePaths, } = this.props
+        const { content, imagePaths, name, } = this.props
         return (
-            <div>
+            <div className="foodList-container">
+                <Title title={name} />
                 <SearchBar
                     placeholder="搜索食物"
                     handleSubmit={this.handleSearch}
@@ -76,8 +78,8 @@ FoodList.propTypes = propTypes
 FoodList.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }, { location, }) => {
-    const { id, name, } = location.query
-    const { foodList: { content, imagePaths, }, } = state
+    const { id, } = location.query
+    const { foodList: { content, imagePaths, name, }, } = state
 
     return {
         content,

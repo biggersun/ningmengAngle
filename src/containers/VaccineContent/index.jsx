@@ -1,8 +1,8 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
-import { changeTitle, } from 'assets/js/util'
-import * as actions from '../../actions/vaccineTimeTable'
+import * as actions from 'actions/vaccineTimeTable'
+import Title from 'components/Title'
 import './index.scss'
 
 const propTypes = {
@@ -38,12 +38,16 @@ class VaccineContent extends Component {
     render() {
         const { content, } = this.props
         const { name, } = this.props
-        changeTitle(name)
         return (
-            <div
-                className="vaccineContent-container"
-                dangerouslySetInnerHTML={{ __html: content, }}
-            />
+            <div>
+                <Title
+                    title={name}
+                />
+                <div
+                    className="vaccineContent-container"
+                    dangerouslySetInnerHTML={{ __html: content, }}
+                />
+            </div>
         )
     }
 }

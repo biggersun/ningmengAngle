@@ -4,7 +4,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    padding-bottom: $content-padding;
+    padding: $content-padding;
 
     & .ulstrasound-item{
         min-width: 100px;

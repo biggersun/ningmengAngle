@@ -5,17 +5,18 @@ import { Router, Route, IndexRedirect, hashHistory, } from 'react-router'
 import { syncHistoryWithStore, } from 'react-router-redux'
 import { relativeToRoot, } from 'assets/js/util'
 
-import App from '../containers/App'
-import Index from '../containers/Index'
-import Ultrasound from '../containers/Ultrasound'
-import Article from '../containers/Article'
-import PTcontent from '../containers/PTcontent'
-import TimeTable from '../containers/TimeTable'
-import VaccineTimeTable from '../containers/VaccineTimeTable'
-import VaccineContent from '../containers/VaccineContent'
-import CannotEat from '../containers/CannotEat'
-import FoodList from '../containers/FoodList'
-import FoodContent from '../containers/FoodContent'
+import App from 'containers/App'
+import Index from 'containers/Index'
+import IndexArt from 'containers/IndexArt'
+import Ultrasound from 'containers/Ultrasound'
+import Article from 'containers/Article'
+import PTcontent from 'containers/PTcontent'
+import TimeTable from 'containers/TimeTable'
+import VaccineTimeTable from 'containers/VaccineTimeTable'
+import VaccineContent from 'containers/VaccineContent'
+import CannotEat from 'containers/CannotEat'
+import FoodList from 'containers/FoodList'
+import FoodContent from 'containers/FoodContent'
 
 export default function RouteTree({ store, indexPath, }) {
     const history = syncHistoryWithStore(hashHistory, store)
@@ -25,6 +26,7 @@ export default function RouteTree({ store, indexPath, }) {
                 <Route path="/" component={App}>
                     <IndexRedirect to={relativeToRoot(indexPath)} />
                     <Route path="index" component={Index} />
+                    <Route path="indexArt" component={IndexArt} />
                     <Route path="ultrasound" component={Ultrasound} />
                     <Route path="airticle" component={Article} />
                     <Route path="timeTable" component={TimeTable} />

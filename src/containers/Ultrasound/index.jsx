@@ -1,17 +1,15 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
-import URI from 'urijs'
 
-import UltrasoundSelect from '../../components/UltrasoundSelect'
-import UltrasoundMessage from '../../components/UltrasoundMessage'
-import UltrasoundIndicators from '../../components/UltrasoundIndicators'
-import UltrasoundTable from '../../components/UltrasoundTable'
+import UltrasoundSelect from 'components/UltrasoundSelect'
+import UltrasoundMessage from 'components/UltrasoundMessage'
+import UltrasoundIndicators from 'components/UltrasoundIndicators'
+import UltrasoundTable from 'components/UltrasoundTable'
+import Title from 'components/Title'
+import * as actions from 'actions/ultrasound'
 
 import './index.scss'
-
-import * as actions from '../../actions/ultrasound'
-
 const propTypes = {
     cycle: PropTypes.number.isRequired,
     biaoq: PropTypes.array.isRequired,
@@ -60,6 +58,9 @@ class Ultrasound extends Component {
         const { biaoq, indicators, cycle, } = this.props
         return (
             <div className="ultrasound-container">
+                <Title
+                    title="看懂B超单"
+                />
                 <UltrasoundSelect onChange={this.handleSelect} weekNumber={numberWeek} />
                 {cycle < 6 ?
                     <UltrasoundMessage message="现在正是孕早期，这个时候做B超是为了确认宫内妊娠是否正常" />

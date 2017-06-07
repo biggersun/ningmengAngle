@@ -17,9 +17,15 @@ import footerImg from 'assets/images/home_img_bottom.png'
 import IndexList from './List'
 import './index.scss'
 
-const propTypes = {}
+const propTypes = {
+    content: PropTypes.array.isRequired,
+    imagePaths: PropTypes.object.isRequired,
+}
 
-const defaultProps = {}
+const defaultProps = {
+    content: [],
+    imagePaths: {},
+}
 
 class IndexTitle extends Component {
     constructor(props) {
@@ -30,12 +36,6 @@ class IndexTitle extends Component {
 
     render() {
         const arr = [
-            {
-                id: 1,
-                name: '妈妈知道',
-                img: img1,
-                url: '/',
-            },
             {
                 id: 2,
                 name: '能不能吃',
@@ -67,6 +67,12 @@ class IndexTitle extends Component {
                 url: 'vaccine',
             },
             {
+                id: 1,
+                name: '妈妈知道',
+                img: img1,
+                url: '/',
+            },
+            {
                 id: 7,
                 name: '宝宝起名',
                 img: img7,
@@ -85,6 +91,7 @@ class IndexTitle extends Component {
                 url: '/',
             },
         ]
+        const { content, imagePaths, } = this.props
         return (
             <div>
                 <div className="index-container-1">
@@ -102,13 +109,17 @@ class IndexTitle extends Component {
                         }
                     </div>
                 </div>
-                <IndexList />
+                <IndexList
+                    content={content}
+                    imagePaths={imagePaths}
+                />
                 <div className="footer">
+                    <div className="more">更多专业知识<em>》</em></div>
                     <img src={footerImg} alt="" />
                     <div className="footer-text">
                         <span>&copy;2017</span>
-                        <a href="" className="center">檬宝宝孕育</a>
-                        <a href="">联系我们</a>
+                        <a href="http://icloudcrm.cn/lemonbabywebsite/index.html" className="center">檬宝宝孕育</a>
+                        <a href="http://icloudcrm.cn/lemonbabywebsite/aboutus.html">联系我们</a>
                     </div>
                 </div>
             </div>

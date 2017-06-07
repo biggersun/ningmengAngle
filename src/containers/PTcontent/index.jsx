@@ -1,8 +1,8 @@
 import React, { Component, } from 'react'
 import { connect, } from 'react-redux'
 import PropTypes from 'prop-types'
-
-import * as actions from '../../actions/timeTable'
+import Title from 'components/Title'
+import * as actions from 'actions/timeTable'
 
 import './index.scss'
 
@@ -34,10 +34,13 @@ class PTcontent extends Component {
     render() {
         const { content, } = this.props
         return (
-            <div
-                className="PTcontent-container"
-                dangerouslySetInnerHTML={{ __html: content, }}
-            />
+            <div>
+                <Title title="产检项目" />
+                <div
+                    className="PTcontent-container"
+                    dangerouslySetInnerHTML={{ __html: content, }}
+                />
+            </div>
         )
     }
 }

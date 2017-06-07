@@ -1,8 +1,8 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
-import { changeTitle, } from 'assets/js/util'
-import * as actions from '../../actions/cannotEat'
+import * as actions from 'actions/cannotEat'
+import Title from 'components/Title'
 import './index.scss'
 
 const propTypes = {
@@ -40,7 +40,6 @@ class FoodContent extends Component {
     render() {
         const { content, imagePath, } = this.props
         const { name, } = this.props
-        changeTitle(name)
         const {
             contentA,
             contentB,
@@ -87,6 +86,9 @@ class FoodContent extends Component {
         }
         return (
             <div className="foodContent-container">
+                <Title
+                    title={name}
+                />
                 <div className="image">
                     <img src={imagePath} alt="食物图片" />
                 </div>

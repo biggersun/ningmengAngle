@@ -11,3 +11,6 @@ export const FIND_EAT = 'FIND_EAT'
 export const FIND_EAT2 = 'FIND_EAT2'
 export const SEARCH_FOOD = 'SEARCH_FOOD'
 
+export const FIND_ART = 'FIND_ART'
+export const FIND_ART2 = 'FIND_ART2'
+

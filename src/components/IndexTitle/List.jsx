@@ -1,34 +1,25 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
+import { hashHistory, } from 'react-router'
 
-import img1 from 'assets/images/home_img_cc.png'
+const propTypes = {
+    content: PropTypes.array.isRequired,
+    imagePaths: PropTypes.object.isRequired,
+}
 
-const propTypes = {}
-
-const defaultProps = {}
+const defaultProps = {
+    content: [],
+    imagePaths: {},
+}
 
 class IndexList extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-        }
+        this.state = {}
     }
 
     render() {
-        const arr = [
-            {
-                id: 1,
-                title: '财案件大家都',
-                content: '爱上你都去浓情那你去饿哦饥饿',
-                img: img1,
-            },
-            {
-                id: 2,
-                title: '财案件大家都',
-                content: '爱上你都去浓情那你去饿哦饥饿',
-                img: img1,
-            },
-        ]
+        const { content, imagePaths, } = this.props
         return (
             <div className="list-container">
                 <div className="title-box">
@@ -36,12 +27,16 @@ class IndexList extends Component {
                     <div className="content">檬宝宝</div>
                     <div className="line" />
                 </div>
-                {arr.map(i => (
-                    <div key={i.id} className="list-item">
-                        <img src={i.img} alt="" />
+                {content.map(i => (
+                    <div
+                        key={i.articleId}
+                        className="list-item"
+                        onClick={() => hashHistory.push(`indexArt?airticleId=${i.articleId}`)}
+                    >
+                        <img src={imagePaths[i.imagePath]} alt="" />
                         <div className="content">
                             <div className="title">{i.title}</div>
-                            <div className="item-content">{i.content}</div>
+                            <div className="item-content">{i.profile}</div>
                         </div>
                     </div>
                 ))}

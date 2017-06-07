@@ -1,26 +1,27 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
-import { changeTitle, } from 'assets/js/util'
 import { connect, } from 'react-redux'
 import SearchBar from 'components/SearchBar'
 import CannotLabel from 'components/CannotLabel'
 import FoodItem from 'components/FoodItem'
-import * as actions from '../../actions/cannotEat'
+import Title from 'components/Title'
+import * as actions from 'actions/cannotEat'
+
+import icon1 from 'assets/images/eat_icon_1.png'
+import icon2 from 'assets/images/eat_icon_2.png'
+import icon3 from 'assets/images/eat_icon_3.png'
+import icon4 from 'assets/images/eat_icon_4.png'
+import icon5 from 'assets/images/eat_icon_5.png'
+import icon6 from 'assets/images/eat_icon_6.png'
+import icon7 from 'assets/images/eat_icon_7.png'
+import icon8 from 'assets/images/eat_icon_8.png'
+import icon9 from 'assets/images/eat_icon_9.png'
+import icon10 from 'assets/images/eat_icon_10.png'
+import icon11 from 'assets/images/eat_icon_11.png'
+import icon12 from 'assets/images/eat_icon_12.png'
 
 import './index.scss'
 
-import icon1 from '../../assets/images/eat_icon_1.png'
-import icon2 from '../../assets/images/eat_icon_2.png'
-import icon3 from '../../assets/images/eat_icon_3.png'
-import icon4 from '../../assets/images/eat_icon_4.png'
-import icon5 from '../../assets/images/eat_icon_5.png'
-import icon6 from '../../assets/images/eat_icon_6.png'
-import icon7 from '../../assets/images/eat_icon_7.png'
-import icon8 from '../../assets/images/eat_icon_8.png'
-import icon9 from '../../assets/images/eat_icon_9.png'
-import icon10 from '../../assets/images/eat_icon_10.png'
-import icon11 from '../../assets/images/eat_icon_11.png'
-import icon12 from '../../assets/images/eat_icon_12.png'
 
 const propTypes = {
     searchFood: PropTypes.func.isRequired,
@@ -39,10 +40,6 @@ class CannotEat extends Component {
         }
         this.handleSearch = this.handleSearch.bind(this)
         this.handleCancel = this.handleCancel.bind(this)
-    }
-
-    componentWillMount() {
-        changeTitle('能不能吃')
     }
 
     handleSearch(text) {
@@ -129,6 +126,9 @@ class CannotEat extends Component {
         const { foodList: { content = [], imagePaths, }, } = this.props
         return (
             <div>
+                <Title
+                    title="能不能吃"
+                />
                 <div className="cannoteat-container">
                     <SearchBar
                         placeholder="搜索食物"

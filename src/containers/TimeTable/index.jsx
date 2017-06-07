@@ -1,8 +1,8 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
 import { connect, } from 'react-redux'
-import { changeTitle, } from 'assets/js/util'
 import TimeTableItem from 'components/TimeTableItem'
+import Title from 'components/Title'
 
 import './index.scss'
 
@@ -23,10 +23,6 @@ class TimeTable extends Component {
         this.state = {}
     }
 
-    componentWillMount() {
-        changeTitle('产检时间表')
-    }
-
     componentDidMount() {
         const { fetchPTPoint, } = this.props
         fetchPTPoint()
@@ -38,6 +34,9 @@ class TimeTable extends Component {
             <div
                 className="timeTable-container"
             >
+                <Title
+                    title="产检时间表"
+                />
                 {PregnancyTest.map((item) => {
                     const time = new Date().getTime()
                     const t1 = 604800000 * (item.cycle - 12)

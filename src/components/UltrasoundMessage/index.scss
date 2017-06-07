@@ -1,5 +1,7 @@
+@import 'assets/css/variables.scss';
+
 .ultrasound-message{
     line-height: 1.5;
-    padding-bottom: 13px;
+    padding: 0 $content-padding 13px $content-padding;;
     font-size: 14px;
 }
