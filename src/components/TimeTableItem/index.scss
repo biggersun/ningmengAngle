@@ -20,6 +20,11 @@
             width: 130px;
             flex-shrink: 0;
             color: $brand-color;
+
+            &:disabled{
+                opacity: 1;
+                -webkit-text-fill-color: $brand-color;
+            }
         }
 
         & .date-icon{

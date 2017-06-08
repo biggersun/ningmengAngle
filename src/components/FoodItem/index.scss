@@ -11,11 +11,10 @@
         overflow: hidden;
         width: 66px;
         flex-shrink: 0;
+        border-radius: 5px;
 
         & > img{
-            width: 66px;
             height: 66px;
-            border-radius: 5px;
         }
     }
 

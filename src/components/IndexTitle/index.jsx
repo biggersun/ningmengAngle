@@ -46,7 +46,7 @@ class IndexTitle extends Component {
                 id: 3,
                 name: '婴儿按摩操',
                 img: img9,
-                url: '/',
+                url: 'http://icloudcrm.cn/lemonbabywebsite/babyvideo.html',
             },
             {
                 id: 4,
@@ -99,13 +99,26 @@ class IndexTitle extends Component {
                         <img src={logo} alt="" />
                     </div>
                     <div className="content">
-                        {arr.map(i =>
-                            <Link className="item" key={i.id} to={i.url} >
-                                <div className="img-box">
-                                    <img src={i.img} alt="" />
-                                </div>
-                                <div className="name">{i.name}</div>
-                            </Link>)
+                        {arr.map((i) => {
+                            if (i.id === 3) {
+                                return (
+                                    <a className="item" key={i.id} href={i.url} >
+                                        <div className="img-box">
+                                            <img src={i.img} alt="" />
+                                        </div>
+                                        <div className="name">{i.name}</div>
+                                    </a>
+                                )
+                            }
+                            return (
+                                <Link className="item" key={i.id} to={i.url} >
+                                    <div className="img-box">
+                                        <img src={i.img} alt="" />
+                                    </div>
+                                    <div className="name">{i.name}</div>
+                                </Link>
+                            )
+                        })
                         }
                     </div>
                 </div>
