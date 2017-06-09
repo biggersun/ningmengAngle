@@ -5,6 +5,7 @@ import './index.scss'
 
 const propTypes = {
     title: PropTypes.string.isRequired,
+    backToIndex: PropTypes.bool.isRequired,
 }
 
 const defaultProps = {
@@ -19,10 +20,13 @@ class Title extends Component {
     }
 
     render() {
-        const { title, } = this.props
+        const { title, backToIndex, } = this.props
         return (
             <div className="page-title">
-                <div className="back-btn" onClick={() => hashHistory.goBack()} />
+                {backToIndex ? <div className="back-btn" onClick={() => hashHistory.push('index')} />
+                : <div className="back-btn" onClick={() => hashHistory.goBack()} />
+                }
+
                 <h1>{title}</h1>
                 <div />
             </div>

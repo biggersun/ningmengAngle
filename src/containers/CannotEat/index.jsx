@@ -128,6 +128,7 @@ class CannotEat extends Component {
             <div>
                 <Title
                     title="能不能吃"
+                    backToIndex
                 />
                 <div className="cannoteat-container">
                     <SearchBar
