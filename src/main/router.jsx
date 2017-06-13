@@ -17,6 +17,8 @@ import VaccineContent from 'containers/VaccineContent'
 import CannotEat from 'containers/CannotEat'
 import FoodList from 'containers/FoodList'
 import FoodContent from 'containers/FoodContent'
+import Growth from 'containers/Growth/index'
+import GrowthList from 'containers/Growth/list'
 
 export default function RouteTree({ store, indexPath, }) {
     const history = syncHistoryWithStore(hashHistory, store)
@@ -36,6 +38,9 @@ export default function RouteTree({ store, indexPath, }) {
                     <Route path="cannotEat" component={CannotEat} />
                     <Route path="foodList" component={FoodList} />
                     <Route path="foodContent" component={FoodContent} />
+                    <Route path="growth" component={Growth}>
+                        <Route path="/list" component={GrowthList} />
+                    </Route>
                 </Route>
             </Router>
         </Provider>

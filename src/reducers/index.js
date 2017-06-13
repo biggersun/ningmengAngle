@@ -4,6 +4,7 @@ import vaccineTimeTable from './vaccineTimeTable'
 import foodList from './cannotEat'
 import vaccineContent from './vaccineContent'
 import indexPageArtList from './indexPage'
+import growth from './growth'
 
 export default {
     ultrasound,
@@ -12,4 +13,5 @@ export default {
     vaccineContent,
     foodList,
     indexPageArtList,
+    growth
 }

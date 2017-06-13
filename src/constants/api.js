@@ -14,3 +14,5 @@ export const SEARCH_FOOD = `${prefix}/find`
 
 export const FIND_ART = `${prefix}/findArt`
 export const FIND_ART2 = `${prefix}/findArt2`
+
+export const FIND_GROWTH = `${prefix}/findGrowth`
