@@ -30,6 +30,18 @@ class Growth extends Component {
                 id: 1,
                 name: '新生儿',
             },
+            {
+                id: 2,
+                name: '1岁',
+            },
+            {
+                id: 3,
+                name: '2岁',
+            },
+            {
+                id: 4,
+                name: '3岁',
+            },
         ]
         return (
             <div>

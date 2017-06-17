@@ -67,6 +67,12 @@ class IndexTitle extends Component {
                 url: 'vaccine',
             },
             {
+                id: 9,
+                name: '发育指标',
+                img: img3,
+                url: 'growth',
+            },
+            {
                 id: 1,
                 name: '妈妈知道',
                 img: img1,
@@ -83,13 +89,7 @@ class IndexTitle extends Component {
                 name: '生男生女',
                 img: img8,
                 url: '/',
-            },
-            {
-                id: 9,
-                name: '发育指标',
-                img: img3,
-                url: '/',
-            },
+            }
         ]
         const { content, imagePaths, } = this.props
         return (
