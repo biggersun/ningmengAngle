@@ -10,6 +10,7 @@ const propTypes = {
 
 const defaultProps = {
     title: '檬宝宝孕育',
+    backToIndex: false,
 }
 
 class Title extends Component {

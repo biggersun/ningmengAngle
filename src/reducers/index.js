@@ -13,5 +13,5 @@ export default {
     vaccineContent,
     foodList,
     indexPageArtList,
-    growth
+    growth,
 }

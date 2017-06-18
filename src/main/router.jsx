@@ -39,7 +39,8 @@ export default function RouteTree({ store, indexPath, }) {
                     <Route path="foodList" component={FoodList} />
                     <Route path="foodContent" component={FoodContent} />
                     <Route path="growth" component={Growth}>
-                        <Route path="/list" component={GrowthList} />
+                        <IndexRedirect to="list" />
+                        <Route path="list" component={GrowthList} />
                     </Route>
                 </Route>
             </Router>

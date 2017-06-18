@@ -10,6 +10,12 @@ export default function growthList(state = initState, { type, payload, }) {
             ...payload,
         }
     }
+    case actionTypes.TAB_SWITCH: {
+        return {
+            ...state,
+            tabId: payload,
+        }
+    }
     default:
         return state
     }

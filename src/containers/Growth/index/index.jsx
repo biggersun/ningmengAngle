@@ -1,22 +1,31 @@
 import React, { Component, } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import {
+    connect,
+} from 'react-redux'
 import * as actions from 'actions/growth'
-import { Link, } from 'react-router'
+import Title from 'components/Title'
+
 import './index.scss'
 
 const propTypes = {
     fetchGrowth: PropTypes.func.isRequired,
-    children: PropTypes.element.isRequired,
+    children: PropTypes.element,
+    content: PropTypes.array.isRequired,
+    tabSwitch: PropTypes.func.isRequired,
 }
 
-const defaultProps = {}
+const defaultProps = {
+    content: [],
+}
 
 class Growth extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            active: 1,
         }
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
@@ -24,29 +33,41 @@ class Growth extends Component {
         fetchGrowth()
     }
 
+    handleClick(tabId) {
+        const { tabSwitch, } = this.props
+        tabSwitch(tabId)
+        this.setState({
+            active: tabId,
+        })
+    }
+
     render() {
-        const tab = [
-            {
-                id: 1,
-                name: '新生儿',
-            },
-            {
-                id: 2,
-                name: '1岁',
-            },
-            {
-                id: 3,
-                name: '2岁',
-            },
-            {
-                id: 4,
-                name: '3岁',
-            },
-        ]
+        const {
+            content,
+        } = this.props
+        const {
+            active,
+        } = this.state
+
         return (
-            <div>
+            <div className="growth-container">
+                <Title
+                    title="生长发育指标"
+                />
                 <ul>
-                    {tab.map(item => <li key={item.id}><Link to={item.url}>{item.name}</Link></li>)}
+                    {content.map(item => <li
+                        key={item.id}
+                        className={active === item.id ? 'active' : ''}
+                        onClick={() => this.handleClick(item.id)}
+                    >
+                        {item.stage}
+                        {active === item.id ?
+                            <div className="activeBar" />
+                            :
+                            <div />
+                        }
+                    </li>)
+                    }
                 </ul>
                 {this.props.children}
             </div>
@@ -58,9 +79,10 @@ Growth.propTypes = propTypes
 
 Growth.defaultProps = defaultProps
 
-const mapStateToProps = ({ ...state, }) => {
+const mapStateToProps = ({ growth, }) => {
+    const { content, } = growth
     return {
-        ...state
+        content,
     }
 }
 

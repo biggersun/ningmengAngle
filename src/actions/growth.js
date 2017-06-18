@@ -5,7 +5,9 @@ import { actionCreator, } from 'assets/js/util'
 
 const renderGrowth = actionCreator(actionTypes.FIND_GROWTH)
 
-export default function fetchGrowth(opts = {}) {
+export const tabSwitch = actionCreator(actionTypes.TAB_SWITCH)
+
+export function fetchGrowth(opts = {}) {
     return async (dispatch) => {
         const params = Object.assign({}, opts)
         let payload
@@ -18,4 +20,3 @@ export default function fetchGrowth(opts = {}) {
         dispatch(renderGrowth(payload))
     }
 }
-

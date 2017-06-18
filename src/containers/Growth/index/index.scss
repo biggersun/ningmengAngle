@@ -1,0 +1,123 @@
+@import 'assets/css/variables.scss';
+
+.growth-container{
+    background-color: #FFF;
+    & > ul{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: flex-start;
+        padding-top: 40px;
+        position: relative;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        background-color: #FFF;
+
+        &::-webkit-scrollbar{
+            display:none;
+        }
+
+        &:after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            border-top: 1px solid #F8F6F7;
+            color: #F8F6F7;
+            -webkit-transform-origin: 0 0;
+            transform-origin: 0 0;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+
+        & > li {
+            flex-shrink: 0;
+            width: 75px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $text-gray-color;
+            position: relative;
+
+            &.active{
+                color: $brand-color;
+            }
+
+            .activeBar{
+                height: 2px;
+                width: 54px;
+                background-color: $brand-color;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+    }
+
+    .growth-content-container{
+        font-size: 13px;
+        color: $text-gray-color;
+
+        .line {
+            background-color: $bg-color;
+            height: 5px;
+        }
+
+        .comment{
+            padding: 21px $content-padding 15px $content-padding;
+        }
+
+        .body-container{
+            padding: 12px $content-padding 21px $content-padding;
+
+            h1 {
+                font-weight: normal;
+                font-size: 14px;
+                color: $brand-color;
+            }
+
+            .body-box-content{
+                height: 87px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: $text-second-color;
+
+                img {
+                    width: 53px;
+                    height: 59px;
+                }
+
+                .body-data{
+                    font-size: 14px;
+
+                    li {
+                        em {
+                            color: $text-color;
+                        }
+
+                        span:nth-child(2){
+                            color: $brand-color;
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .item {
+            padding: 15px $content-padding;
+
+            h1 {
+                font-size: 16px;
+                color: $text-color;
+                font-weight: normal;
+            }
+
+            p {
+                line-height: 2;
+            }
+        }
+    }
+}
