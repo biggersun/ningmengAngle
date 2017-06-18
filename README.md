@@ -24,8 +24,6 @@ yarn run build
 
 ## 项目路由
 
-
-
 ### 看懂B超
 
 ```bash
@@ -48,5 +46,11 @@ yarn run build
 
 ```bash
 #/cannotEat
+```
+
+### 生长状况
+
+```bash
+#/growth
 ```
 
