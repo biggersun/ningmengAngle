@@ -10,6 +10,7 @@ import Title from 'components/Title'
 import * as actions from 'actions/ultrasound'
 
 import './index.scss'
+
 const propTypes = {
     cycle: PropTypes.number.isRequired,
     biaoq: PropTypes.array.isRequired,

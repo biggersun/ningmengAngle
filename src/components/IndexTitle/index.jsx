@@ -89,7 +89,7 @@ class IndexTitle extends Component {
                 name: '生男生女',
                 img: img8,
                 url: '/',
-            }
+            },
         ]
         const { content, imagePaths, } = this.props
         return (
