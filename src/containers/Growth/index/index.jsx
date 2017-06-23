@@ -60,11 +60,12 @@ class Growth extends Component {
                         className={active === item.id ? 'active' : ''}
                         onClick={() => this.handleClick(item.id)}
                     >
-                        {item.stage}
+                        <div>
+                            {item.stage}
+                        </div>
                         {active === item.id ?
                             <div className="activeBar" />
-                            :
-                            <div />
+                            : <div />
                         }
                     </li>)
                     }
