@@ -84,15 +84,27 @@
                 align-items: center;
                 color: $text-second-color;
 
-                img {
-                    width: 53px;
-                    height: 59px;
+                & > .img-box{
+                    width: 35%;
+                    // flex-shrink: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    & > img {
+                        width: 53px;
+                        height: 59px;
+                    }
                 }
 
                 .body-data{
                     font-size: 14px;
+                    flex-grow: 1;
 
                     li {
+                        display: flex;
+                        justify-content: space-between;
+
                         em {
                             color: $text-color;
                         }
@@ -100,6 +112,10 @@
                         span:nth-child(2){
                             color: $brand-color;
                             margin: 0 5px;
+                        }
+
+                        span:nth-child(3){
+                            width: 30%;
                         }
                     }
                 }

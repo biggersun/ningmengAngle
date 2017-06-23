@@ -61,22 +61,24 @@ class List extends Component {
                 <div className="body-container">
                     <h1>男孩：</h1>
                     <div className="body-box-content">
-                        <img src={boy} alt="" />
+                        <div className="img-box">
+                            <img src={boy} alt="" />
+                        </div>
                         <ul className="body-data">
                             <li>
-                                <span>身高（cm）<em>{boyHeight}</em></span>
+                                <span>身高（cm）<em>{boyHeight || '--'}</em></span>
                                 <span> / </span>
-                                <span>平均{boyHeightAvg}</span>
+                                <span>平均{boyHeightAvg || '--'}</span>
                             </li>
                             <li>
-                                <span>体重（cm）<em>{boyWeight}</em></span>
+                                <span>体重（cm）<em>{boyWeight || '--'}</em></span>
                                 <span> / </span>
-                                <span>平均{boyWeightAvg}</span>
+                                <span>平均{boyWeightAvg || '--'}</span>
                             </li>
                             <li>
-                                <span>头围（cm）<em>{boyHead}</em></span>
+                                <span>头围（cm）<em>{boyHead || '--'}</em></span>
                                 <span> / </span>
-                                <span>平均{boyHeadAvg}</span>
+                                <span>平均{boyHeadAvg || '--'}</span>
                             </li>
                         </ul>
                     </div>
@@ -87,22 +89,24 @@ class List extends Component {
                 <div className="body-container">
                     <h1>女孩：</h1>
                     <div className="body-box-content">
-                        <img src={girl} alt="" />
+                        <div className="img-box">
+                            <img src={girl} alt="" />
+                        </div>
                         <ul className="body-data">
                             <li>
-                                <span>身高（cm）<em>{girlHeight}</em></span>
+                                <span>身高（cm）<em>{girlHeight || '--'}</em></span>
                                 <span> / </span>
-                                <span>平均{girlHeightAvg}</span>
+                                <span>平均{girlHeightAvg || '--'}</span>
                             </li>
                             <li>
-                                <span>体重（cm）<em>{girlWeight}</em></span>
+                                <span>体重（cm）<em>{girlWeight || '--'}</em></span>
                                 <span> / </span>
-                                <span>平均{girlWeightAvg}</span>
+                                <span>平均{girlWeightAvg || '--'}</span>
                             </li>
                             <li>
-                                <span>头围（cm）<em>{girlHead}</em></span>
+                                <span>头围（cm）<em>{girlHead || '--'}</em></span>
                                 <span> / </span>
-                                <span>平均{girlHeadAvg}</span>
+                                <span>平均{girlHeadAvg || '--'}</span>
                             </li>
                         </ul>
                     </div>
