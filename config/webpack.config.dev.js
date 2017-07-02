@@ -13,7 +13,7 @@ const srcDir = resolve(projectDir, 'src')
 const mainDir = resolve(srcDir, 'main')
 const appJsPath = resolve(mainDir, 'index.jsx')
 
-const port = 8080
+const port = 4000
 const host = '0.0.0.0'
 const hot = process.env.NODE_PROJECT_HOT === 'true'
 
