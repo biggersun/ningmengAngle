@@ -1,8 +1,8 @@
 import * as actionTypes from 'constants/actionTypes'
 import * as api from 'constants/api'
-import { get, } from 'assets/js/request'
-import { actionCreator, } from 'assets/js/util'
-import { replaceQuery, } from './router'
+import { get } from 'assets/js/request'
+import { actionCreator } from 'assets/js/util'
+import { replaceQuery } from './router'
 
 const renderCannotEat = actionCreator(actionTypes.FIND_EAT)
 const renderCannotEat2 = actionCreator(actionTypes.FIND_EAT2)

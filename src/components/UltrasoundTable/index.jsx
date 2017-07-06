@@ -1,4 +1,4 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import './index.scss'
@@ -20,7 +20,7 @@ class UltrasoundTable extends Component {
     }
 
     render() {
-        const { indicators, } = this.props
+        const { indicators } = this.props
         return (
             <div className="ultrasound-table">
                 {indicators.map(item => <UltrasoundItem

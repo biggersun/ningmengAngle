@@ -1,5 +1,5 @@
-import React, { Component, } from 'react'
-import { connect, } from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import boy from 'assets/images/icon_boy.png'
@@ -141,7 +141,7 @@ List.propTypes = propTypes
 
 List.defaultProps = defaultProps
 
-const mapStateToProps = ({ growth, }) => {
+const mapStateToProps = ({ growth }) => {
     const {
         tabId = 1,
         content = [],

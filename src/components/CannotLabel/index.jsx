@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { hashHistory, } from 'react-router'
+import { hashHistory } from 'react-router'
 
 const propTypes = {
     content: PropTypes.object.isRequired,
@@ -19,12 +19,12 @@ class CannotLabel extends Component {
     }
 
     handleClick() {
-        const { content: { id, }, } = this.props
+        const { content: { id } } = this.props
         hashHistory.push(`foodList?id=${id}`)
     }
 
     render() {
-        const { content, } = this.props
+        const { content } = this.props
         return (
             <div
                 className="cannotLabel"

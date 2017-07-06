@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Provider, } from 'react-redux'
-import { Router, Route, IndexRedirect, hashHistory, } from 'react-router'
-import { syncHistoryWithStore, } from 'react-router-redux'
-import { relativeToRoot, } from 'assets/js/util'
+import { Provider } from 'react-redux'
+import { Router, Route, IndexRedirect, hashHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+import { relativeToRoot } from 'assets/js/util'
 
 import App from 'containers/App'
 import Index from 'containers/Index'
@@ -19,8 +19,10 @@ import FoodList from 'containers/FoodList'
 import FoodContent from 'containers/FoodContent'
 import Growth from 'containers/Growth/index'
 import GrowthList from 'containers/Growth/list'
+import MamKown from 'containers/MamKown'
+import MamAircles from 'containers/MamAircles'
 
-export default function RouteTree({ store, indexPath, }) {
+export default function RouteTree({ store, indexPath }) {
     const history = syncHistoryWithStore(hashHistory, store)
     return (
         <Provider store={store}>
@@ -42,6 +44,8 @@ export default function RouteTree({ store, indexPath, }) {
                         <IndexRedirect to="list" />
                         <Route path="list" component={GrowthList} />
                     </Route>
+                    <Route path="mamKown" component={MamKown} />
+                    <Route path="mamAircles" component={MamAircles} />
                 </Route>
             </Router>
         </Provider>

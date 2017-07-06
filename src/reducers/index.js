@@ -5,6 +5,7 @@ import foodList from './cannotEat'
 import vaccineContent from './vaccineContent'
 import indexPageArtList from './indexPage'
 import growth from './growth'
+import mamList from './mamKown'
 
 export default {
     ultrasound,
@@ -14,4 +15,5 @@ export default {
     foodList,
     indexPageArtList,
     growth,
+    mamList,
 }

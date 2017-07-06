@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { SearchBar, } from 'react-weui'
+import { SearchBar } from 'react-weui'
 
 import 'weui'
 import './index.scss'
@@ -21,7 +21,7 @@ export default class SearchBar1 extends Component {
     }
 
     render() {
-        const { handleSubmit, handleCancel, } = this.props
+        const { handleSubmit, handleCancel } = this.props
         return (
             <SearchBar
                 className="searchBar"

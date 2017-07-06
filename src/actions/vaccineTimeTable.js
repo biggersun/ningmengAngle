@@ -1,7 +1,7 @@
 import * as actionTypes from 'constants/actionTypes'
 import * as api from 'constants/api'
-import { get, } from 'assets/js/request'
-import { actionCreator, } from 'assets/js/util'
+import { get } from 'assets/js/request'
+import { actionCreator } from 'assets/js/util'
 
 const renderVaccineTimeTable = actionCreator(actionTypes.FIND_VACCINETEST)
 const renderVaccineContent = actionCreator(actionTypes.FIND_VCONTENT)

@@ -1,4 +1,4 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VaccineItem from '../VaccineItem'
 import './index.scss'
@@ -18,7 +18,7 @@ class VaccineTimeTableItem extends Component {
     }
 
     render() {
-        const { stage, content, } = this.props
+        const { stage, content } = this.props
         return (
             <div className="vaccineTimeTableItem-container">
                 <h1>{stage}</h1>

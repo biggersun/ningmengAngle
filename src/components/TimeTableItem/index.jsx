@@ -1,8 +1,8 @@
-import React, { Component, } from 'react'
-import { hashHistory, } from 'react-router'
+import React, { Component } from 'react'
+import { hashHistory } from 'react-router'
 
 import PropTypes from 'prop-types'
-import { Input, } from 'react-weui'
+import { Input } from 'react-weui'
 
 import 'weui'
 
@@ -22,12 +22,12 @@ class TimeTableItem extends Component {
     }
 
     handleClick() {
-        const { content: { pregnancyTestId, }, } = this.props
+        const { content: { pregnancyTestId } } = this.props
         hashHistory.push(`/ptcontent?id=${pregnancyTestId}`)
     }
 
     render() {
-        const { content, } = this.props
+        const { content } = this.props
         return (
             <div
                 className="timetable-item"

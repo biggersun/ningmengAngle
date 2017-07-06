@@ -1,4 +1,4 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './index.scss'
 
@@ -17,7 +17,7 @@ class UltrasoundIndicators extends Component {
     }
 
     render() {
-        const { biaoq, } = this.props
+        const { biaoq } = this.props
         return (
             <div className="ultrasound-indicator">
                 <h1>B超单相关对应值：</h1>

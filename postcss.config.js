@@ -5,7 +5,7 @@ const precss = require('precss')
 const autoprefixer = require('autoprefixer')
 const calc = require('postcss-calc')
 
-module.exports = ({ webpack, }) => {
+module.exports = ({ webpack }) => {
     const isLess = /^\.less$/i.test(path.extname(webpack.resourcePath))
 
     const autoprefixerPlugin = autoprefixer({

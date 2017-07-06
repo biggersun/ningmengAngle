@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import * as actions from 'actions/ultrasound'
 import Title from 'components/Title'
 
@@ -30,7 +30,7 @@ class Article extends Component {
     }
 
     fetchAirticle() {
-        const { airticleId, fetchContent, } = this.props
+        const { airticleId, fetchContent } = this.props
         const params = {
             id: airticleId,
         }
@@ -38,14 +38,14 @@ class Article extends Component {
     }
 
     render() {
-        const { content, name, } = this.props
+        const { content, name } = this.props
 
         return (
             <div>
                 <Title title={name} />
                 <div
                     className="airticle-container"
-                    dangerouslySetInnerHTML={{ __html: content, }}
+                    dangerouslySetInnerHTML={{ __html: content }}
                 />
             </div>
         )
@@ -57,9 +57,9 @@ Article.propTypes = propTypes
 Article.defaultProps = defaultProps
 
 
-const mapStateToProps = ({ ...state }, { location, }) => {
-    const { airticleId, } = location.query
-    const { ultrasound: { content, name, }, } = state
+const mapStateToProps = ({ ...state }, { location }) => {
+    const { airticleId } = location.query
+    const { ultrasound: { content, name } } = state
     return {
         content,
         name,
@@ -67,7 +67,7 @@ const mapStateToProps = ({ ...state }, { location, }) => {
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Article)
 

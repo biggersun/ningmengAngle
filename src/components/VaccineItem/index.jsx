@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { hashHistory, } from 'react-router'
+import { hashHistory } from 'react-router'
 import './index.scss'
 
 const propTypes = {
@@ -18,12 +18,12 @@ class VaccineItem extends Component {
     }
 
     handleHref() {
-        const { vaccine: { vaccineId, }, } = this.props
+        const { vaccine: { vaccineId } } = this.props
         hashHistory.push(`vaccineContent?vaccineId=${vaccineId}`)
     }
 
     render() {
-        const { vaccine, } = this.props
+        const { vaccine } = this.props
         return (
             <div className="vaccine-container" onClick={this.handleHref}>
                 <div>

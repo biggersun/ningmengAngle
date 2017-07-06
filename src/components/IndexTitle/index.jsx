@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link, } from 'react-router'
+import { Link } from 'react-router'
 
 import img1 from 'assets/images/home_icon_1.png'
 import img2 from 'assets/images/home_icon_2.png'
@@ -76,7 +76,7 @@ class IndexTitle extends Component {
                 id: 1,
                 name: '妈妈知道',
                 img: img1,
-                url: '/',
+                url: '/mamKown',
             },
             {
                 id: 7,
@@ -91,7 +91,7 @@ class IndexTitle extends Component {
                 url: '/',
             },
         ]
-        const { content, imagePaths, } = this.props
+        const { content, imagePaths } = this.props
         return (
             <div>
                 <div className="index-container-1">

@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 
 import * as actions from 'actions/indexPage'
 
@@ -28,7 +28,7 @@ class Article extends Component {
     }
 
     fetchAirticle() {
-        const { airticleId, fetchArtContent, } = this.props
+        const { airticleId, fetchArtContent } = this.props
         const params = {
             id: airticleId,
         }
@@ -36,12 +36,12 @@ class Article extends Component {
     }
 
     render() {
-        const { content, } = this.props
+        const { content } = this.props
 
         return (
             <div
                 className="airticle-container"
-                dangerouslySetInnerHTML={{ __html: content, }}
+                dangerouslySetInnerHTML={{ __html: content }}
             />
         )
     }
@@ -52,16 +52,16 @@ Article.propTypes = propTypes
 Article.defaultProps = defaultProps
 
 
-const mapStateToProps = ({ indexPageArtList, }, { location, }) => {
-    const { airticleId, } = location.query
-    const { content, } = indexPageArtList
+const mapStateToProps = ({ indexPageArtList }, { location }) => {
+    const { airticleId } = location.query
+    const { content } = indexPageArtList
     return {
         content,
         airticleId: Number(airticleId),
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Article)
 

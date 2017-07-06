@@ -1,5 +1,5 @@
-import React, { Component, } from 'react'
-import { connect, } from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import Title from 'components/Title'
 import * as actions from 'actions/timeTable'
@@ -24,7 +24,7 @@ class PTcontent extends Component {
     }
 
     componentDidMount() {
-        const { fetchPTContent, id, } = this.props
+        const { fetchPTContent, id } = this.props
         const params = {
             id,
         }
@@ -32,13 +32,13 @@ class PTcontent extends Component {
     }
 
     render() {
-        const { content, } = this.props
+        const { content } = this.props
         return (
             <div>
                 <Title title="产检项目" />
                 <div
                     className="PTcontent-container"
-                    dangerouslySetInnerHTML={{ __html: content, }}
+                    dangerouslySetInnerHTML={{ __html: content }}
                 />
             </div>
         )
@@ -49,14 +49,14 @@ PTcontent.propTypes = propTypes
 
 PTcontent.defaultProps = defaultProps
 
-const mapStateToprops = ({ ...state }, { location, }) => {
-    const { timeTable: { content, }, } = state
-    const { id, } = location.query
+const mapStateToprops = ({ ...state }, { location }) => {
+    const { timeTable: { content } } = state
+    const { id } = location.query
     return {
         id: Number(id),
         content,
     }
 }
 
-const mapDispatchToprops = { ...actions, }
+const mapDispatchToprops = { ...actions }
 export default connect(mapStateToprops, mapDispatchToprops)(PTcontent)

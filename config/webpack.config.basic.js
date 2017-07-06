@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies,import/no-unresolved*/
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { srcDir, distDir, appHtmlPath, } = require('./files.config')
+const { srcDir, distDir, appHtmlPath } = require('./files.config')
 
 module.exports = () => {
     const NODE_ENV = process.env.NODE_ENV === 'production' ? 'production' : 'development'
@@ -13,7 +13,7 @@ module.exports = () => {
     })
 
     const extractVendor = new webpack.optimize.CommonsChunkPlugin({
-        name: [ 'vendor', 'manifest', ],
+        name: [ 'vendor', 'manifest' ],
         minChunks: Infinity,
     })
 
@@ -81,8 +81,8 @@ module.exports = () => {
         ],
 
         resolve: {
-            modules: [ srcDir, 'node_modules', ],
-            extensions: [ '*', '.js', '.jsx', '.css', '.scss', ],
+            modules: [ srcDir, 'node_modules' ],
+            extensions: [ '*', '.js', '.jsx', '.css', '.scss' ],
         },
     }
 }

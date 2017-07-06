@@ -1,4 +1,4 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
     connect,
@@ -29,12 +29,12 @@ class Growth extends Component {
     }
 
     componentDidMount() {
-        const { fetchGrowth, } = this.props
+        const { fetchGrowth } = this.props
         fetchGrowth()
     }
 
     handleClick(tabId) {
-        const { tabSwitch, } = this.props
+        const { tabSwitch } = this.props
         tabSwitch(tabId)
         this.setState({
             active: tabId,
@@ -80,13 +80,13 @@ Growth.propTypes = propTypes
 
 Growth.defaultProps = defaultProps
 
-const mapStateToProps = ({ growth, }) => {
-    const { content, } = growth
+const mapStateToProps = ({ growth }) => {
+    const { content } = growth
     return {
         content,
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Growth)

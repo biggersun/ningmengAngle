@@ -23,7 +23,7 @@ class CustomFetchError {
 export function buildQuery(data) {
     const toString = Object.prototype.toString
 
-    const res = Object.entries(data).reduce((pre, [ key, value, ]) => {
+    const res = Object.entries(data).reduce((pre, [ key, value ]) => {
         let newValue
 
         if (Array.isArray(value) || toString.call(value) === '[object Object]') {
@@ -106,7 +106,7 @@ export function post(url, params = {}, opt = {}) {
 export function uploadFile(url, params, opt) {
     const data = new FormData()
 
-    Object.entries(params).every(([ key, value, ]) => data.append(key, value))
+    Object.entries(params).every(([ key, value ]) => data.append(key, value))
 
     const init = Object.assign({
         method: 'POST',

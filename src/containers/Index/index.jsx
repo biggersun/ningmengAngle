@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import * as actions from 'actions/indexPage'
 import IndexTitle from '../../components/IndexTitle'
 
@@ -26,12 +26,12 @@ class Index extends Component {
     }
 
     componentDidMount() {
-        const { fetchArt, } = this.props
+        const { fetchArt } = this.props
         fetchArt()
     }
 
     render() {
-        const { content, imagePaths, } = this.props
+        const { content, imagePaths } = this.props
         return (
             <div>
                 <IndexTitle content={content} imagePaths={imagePaths} />
@@ -44,13 +44,13 @@ Index.propTypes = propTypes
 
 Index.defaultProps = defaultProps
 
-const mapStateToProps = ({ indexPageArtList, }) => {
-    const { content1, imagePaths, } = indexPageArtList
+const mapStateToProps = ({ indexPageArtList }) => {
+    const { content1, imagePaths } = indexPageArtList
     return {
         content: content1,
         imagePaths,
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 export default connect(mapStateToProps, mapDispatchToProps)(Index)

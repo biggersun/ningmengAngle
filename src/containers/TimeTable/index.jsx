@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import TimeTableItem from 'components/TimeTableItem'
 import Title from 'components/Title'
 
@@ -24,12 +24,12 @@ class TimeTable extends Component {
     }
 
     componentDidMount() {
-        const { fetchPTPoint, } = this.props
+        const { fetchPTPoint } = this.props
         fetchPTPoint()
     }
 
     render() {
-        const { PregnancyTest, } = this.props
+        const { PregnancyTest } = this.props
         return (
             <div
                 className="timeTable-container"
@@ -63,12 +63,12 @@ TimeTable.propTypes = propTypes
 TimeTable.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }) => {
-    const { timeTable, } = state
+    const { timeTable } = state
     return {
         ...timeTable,
     }
 }
 
-const mapDispatchToProps = { ...action, }
+const mapDispatchToProps = { ...action }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TimeTable)

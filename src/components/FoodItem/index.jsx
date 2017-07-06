@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { hashHistory, } from 'react-router'
+import { hashHistory } from 'react-router'
 
 import './index.scss'
 
@@ -33,12 +33,12 @@ class FoodItem extends Component {
     }
 
     handleClick() {
-        const { content: { canEatId, }, } = this.props
+        const { content: { canEatId } } = this.props
         hashHistory.push(`foodContent?id=${canEatId}`)
     }
 
     render() {
-        const { content, icon, } = this.props
+        const { content, icon } = this.props
         return (
             <div
                 className="foodItem-container"

@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { hashHistory, } from 'react-router'
+import { hashHistory } from 'react-router'
 
 const propTypes = {
     content: PropTypes.array.isRequired,
@@ -19,7 +19,7 @@ class IndexList extends Component {
     }
 
     render() {
-        const { content, imagePaths, } = this.props
+        const { content, imagePaths } = this.props
         return (
             <div className="list-container">
                 <div className="title-box">

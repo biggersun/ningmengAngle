@@ -4,7 +4,7 @@ const webpackMerge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WebpackChunkHash = require('webpack-chunk-hash')
 const commonConfig = require('./webpack.config.basic')
-const { appJsPath, } = require('./files.config')
+const { appJsPath } = require('./files.config')
 
 const publicPath = '/lemonbaby'
 

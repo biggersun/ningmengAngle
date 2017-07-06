@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { hashHistory, } from 'react-router'
+import { hashHistory } from 'react-router'
 import './index.scss'
 
 const propTypes = {
@@ -21,7 +21,7 @@ class Title extends Component {
     }
 
     render() {
-        const { title, backToIndex, } = this.props
+        const { title, backToIndex } = this.props
         return (
             <div className="page-title">
                 {backToIndex ? <div className="back-btn" onClick={() => hashHistory.push('index')} />

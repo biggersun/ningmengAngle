@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 
 import UltrasoundSelect from 'components/UltrasoundSelect'
 import UltrasoundMessage from 'components/UltrasoundMessage'
@@ -34,8 +34,8 @@ class Ultrasound extends Component {
     }
 
     componentDidMount() {
-        const { fetchValue, } = this.props
-        const { cycle, } = this.state
+        const { fetchValue } = this.props
+        const { cycle } = this.state
         const params = {
             cycle,
         }
@@ -43,7 +43,7 @@ class Ultrasound extends Component {
     }
 
     handleSelect(e) {
-        const { fetchValue, } = this.props
+        const { fetchValue } = this.props
         const params = {
             cycle: e.target.value,
         }
@@ -55,8 +55,8 @@ class Ultrasound extends Component {
 
     render() {
         const numberWeek = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-            21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, ]
-        const { biaoq, indicators, cycle, } = this.props
+            21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ]
+        const { biaoq, indicators, cycle } = this.props
         return (
             <div className="ultrasound-container">
                 <Title
@@ -78,7 +78,7 @@ Ultrasound.propTypes = propTypes
 Ultrasound.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }) => {
-    const { ultrasound: { biaoq, indicators, cycle, }, } = state
+    const { ultrasound: { biaoq, indicators, cycle } } = state
     return {
         biaoq,
         cycle: Number(cycle),
@@ -86,6 +86,6 @@ const mapStateToProps = ({ ...state }) => {
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Ultrasound)

@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import * as actions from 'actions/cannotEat'
 import Title from 'components/Title'
 import './index.scss'
@@ -32,14 +32,14 @@ class FoodContent extends Component {
     }
 
     handFetchContent() {
-        const { fetchFoodContent, id, } = this.props
-        const params = { id, }
+        const { fetchFoodContent, id } = this.props
+        const params = { id }
         fetchFoodContent(params)
     }
 
     render() {
-        const { content, imagePath, } = this.props
-        const { name, } = this.props
+        const { content, imagePath } = this.props
+        const { name } = this.props
         const {
             contentA,
             contentB,
@@ -146,9 +146,9 @@ FoodContent.propTypes = propTypes
 
 FoodContent.defaultProps = defaultProps
 
-const mapStateToProps = ({ ...state }, { location, }) => {
-    const { id, } = location.query
-    const { foodList: { content, name, imagePath, }, } = state
+const mapStateToProps = ({ ...state }, { location }) => {
+    const { id } = location.query
+    const { foodList: { content, name, imagePath } } = state
     return {
         content,
         name,
@@ -157,7 +157,7 @@ const mapStateToProps = ({ ...state }, { location, }) => {
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FoodContent)
 

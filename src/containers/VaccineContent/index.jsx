@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import * as actions from 'actions/vaccineTimeTable'
 import Title from 'components/Title'
 import './index.scss'
@@ -30,14 +30,14 @@ class VaccineContent extends Component {
     }
 
     handFetchContent() {
-        const { fetchVaccineContent, vaccineId, } = this.props
-        const params = { id: vaccineId, }
+        const { fetchVaccineContent, vaccineId } = this.props
+        const params = { id: vaccineId }
         fetchVaccineContent(params)
     }
 
     render() {
-        const { content, } = this.props
-        const { name, } = this.props
+        const { content } = this.props
+        const { name } = this.props
         return (
             <div>
                 <Title
@@ -45,7 +45,7 @@ class VaccineContent extends Component {
                 />
                 <div
                     className="vaccineContent-container"
-                    dangerouslySetInnerHTML={{ __html: content, }}
+                    dangerouslySetInnerHTML={{ __html: content }}
                 />
             </div>
         )
@@ -56,9 +56,9 @@ VaccineContent.propTypes = propTypes
 
 VaccineContent.defaultProps = defaultProps
 
-const mapStateToProps = ({ ...state }, { location, }) => {
-    const { vaccineId, } = location.query
-    const { vaccineContent: { content, name, }, } = state
+const mapStateToProps = ({ ...state }, { location }) => {
+    const { vaccineId } = location.query
+    const { vaccineContent: { content, name } } = state
     return {
         content,
         name,
@@ -66,7 +66,7 @@ const mapStateToProps = ({ ...state }, { location, }) => {
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 
 export default connect(mapStateToProps, mapDispatchToProps)(VaccineContent)
 

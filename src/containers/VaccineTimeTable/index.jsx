@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import Title from 'components/Title'
 import * as action from 'actions/vaccineTimeTable'
 
@@ -29,12 +29,12 @@ class VaccineTimeTable extends Component {
     }
 
     handleFetch() {
-        const { fetchVaccineTimeTable, } = this.props
+        const { fetchVaccineTimeTable } = this.props
         fetchVaccineTimeTable()
     }
 
     render() {
-        const { vaccineTimeTable: { content = [], }, } = this.props
+        const { vaccineTimeTable: { content = [] } } = this.props
         return (
             <div className="vaccineTime-container">
                 <Title title="疫苗时间表" backToIndex />
@@ -53,13 +53,13 @@ VaccineTimeTable.propTypes = propTypes
 VaccineTimeTable.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }) => {
-    const { vaccineTimeTable, } = state
+    const { vaccineTimeTable } = state
     return {
         vaccineTimeTable,
     }
 }
 
-const mapDispatchToProps = { ...action, }
+const mapDispatchToProps = { ...action }
 
 export default connect(mapStateToProps, mapDispatchToProps)(VaccineTimeTable)
 

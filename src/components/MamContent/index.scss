@@ -1,0 +1,63 @@
+@import 'assets/css/variables.scss';
+
+.mam-content-container{
+    display: flex;
+
+    & .tabBar{
+        flex-shrink: 0;
+        list-style-type: none;
+        width: 72px;
+        overflow-y: scroll;
+        border-right: 1px solid $border-color;
+        max-height: 90vh;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar{
+            display:none;
+        }
+
+        & li{
+            height: 80px;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    & .content{
+        max-height: 90vh;
+        overflow-y: scroll;
+        flex-grow: 1;
+        -webkit-overflow-scrolling: touch;
+        padding: 22px 14px;
+
+        &::-webkit-scrollbar{
+            display:none;
+        }
+
+        & .title{
+            color: $brand-color;
+            margin-bottom: 12px;
+        }
+
+        & ul{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+
+            & li{
+                flex-shrink: 0;
+                width: 124px;
+                height: 28px;
+                border: 1px solid $border-color;
+                border-radius: 5px;
+                text-align: center;
+                line-height: 28px;
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

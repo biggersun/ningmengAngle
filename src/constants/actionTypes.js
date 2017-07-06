@@ -16,3 +16,5 @@ export const FIND_ART2 = 'FIND_ART2'
 
 export const FIND_GROWTH = 'FIND_GROWTH'
 export const TAB_SWITCH = 'TAB_SWITCH'
+
+export const FIND_MAM = 'FIND_MAM'

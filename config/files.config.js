@@ -1,4 +1,4 @@
-const { resolve, } = require('path')
+const { resolve } = require('path')
 
 const projectDir = process.cwd()
 const srcDir = resolve(projectDir, 'src')

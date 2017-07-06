@@ -1,5 +1,5 @@
-import React, { PureComponent, } from 'react'
-import { LoadMore, } from 'react-weui'
+import React, { PureComponent } from 'react'
+import { LoadMore } from 'react-weui'
 import 'weui'
 import './index.scss'
 
@@ -28,12 +28,12 @@ class App extends PureComponent {
         const store = createStore(initState)
 
         setTimeout(() => {
-            this.setState({ initState, store, })
+            this.setState({ initState, store })
         }, 500)
     }
 
     render() {
-        const { initState, store, } = this.state
+        const { initState, store } = this.state
         if (!initState || !store) {
             return <LoadMore loading>loading...</LoadMore>
         }

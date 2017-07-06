@@ -3,20 +3,19 @@ import * as api from 'constants/api'
 import { get } from 'assets/js/request'
 import { actionCreator } from 'assets/js/util'
 
-const renderGrowth = actionCreator(actionTypes.FIND_GROWTH)
+const renderIndex = actionCreator(actionTypes.FIND_MAM)
 
-export const tabSwitch = actionCreator(actionTypes.TAB_SWITCH)
-
-export function fetchGrowth(opts = {}) {
+export function fetchMamList(opts = {}) {
     return async (dispatch) => {
         const params = Object.assign({}, opts)
         let payload
 
         try {
-            payload = await get(api.FIND_GROWTH, params)
+            payload = await get(api.FIND_MAM, params)
         } catch (e) {
             return
         }
-        dispatch(renderGrowth(payload))
+        dispatch(renderIndex(payload))
     }
 }
+

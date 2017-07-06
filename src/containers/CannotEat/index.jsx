@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import SearchBar from 'components/SearchBar'
 import CannotLabel from 'components/CannotLabel'
 import FoodItem from 'components/FoodItem'
@@ -43,7 +43,7 @@ class CannotEat extends Component {
     }
 
     handleSearch(text) {
-        const { searchFood, } = this.props
+        const { searchFood } = this.props
         const params = {
             name: text,
         }
@@ -122,8 +122,8 @@ class CannotEat extends Component {
                 name: '补品/草药',
             },
         ]
-        const { status, } = this.state
-        const { foodList: { content = [], imagePaths, }, } = this.props
+        const { status } = this.state
+        const { foodList: { content = [], imagePaths } } = this.props
         return (
             <div>
                 <Title
@@ -156,13 +156,13 @@ CannotEat.propTypes = propTypes
 CannotEat.defaultProps = defaultProps
 
 const mapStateToProps = ({ ...state }) => {
-    const { foodList, } = state
+    const { foodList } = state
     return {
         foodList,
     }
 }
 
-const mapDispatchToProps = { ...actions, }
+const mapDispatchToProps = { ...actions }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CannotEat)
 

@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { hashHistory, } from 'react-router'
+import { hashHistory } from 'react-router'
 
 const propTypes = {
     name: PropTypes.string.isRequired,
@@ -17,12 +17,12 @@ class UltrasoundItem extends Component {
     }
 
     handleClick() {
-        const { airticleId, } = this.props
+        const { airticleId } = this.props
         hashHistory.push(`airticle?airticleId=${airticleId}`)
     }
 
     render() {
-        const { name, } = this.props
+        const { name } = this.props
         return (
             <div
                 onClick={this.handleClick}

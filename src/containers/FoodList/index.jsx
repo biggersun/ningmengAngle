@@ -1,6 +1,6 @@
-import React, { Component, } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect, } from 'react-redux'
+import { connect } from 'react-redux'
 import * as actions from 'actions/cannotEat'
 
 import SearchBar from 'components/SearchBar'
@@ -38,7 +38,7 @@ class FoodList extends Component {
     }
 
     handleFetch() {
-        const { fetchFoodType, id, } = this.props
+        const { fetchFoodType, id } = this.props
         const params = {
             id,
         }
@@ -46,17 +46,17 @@ class FoodList extends Component {
     }
 
     handleSearch(text) {
-        const { searchFood, } = this.props
-        searchFood({ name: text, })
+        const { searchFood } = this.props
+        searchFood({ name: text })
     }
 
     handleCancel() {
-        const { searchFood, } = this.props
-        searchFood({ name: '', })
+        const { searchFood } = this.props
+        searchFood({ name: '' })
     }
 
     render() {
-        const { content, imagePaths, name, } = this.props
+        const { content, imagePaths, name } = this.props
         return (
             <div className="foodList-container">
                 <Title title={name} />
@@ -77,9 +77,9 @@ FoodList.propTypes = propTypes
 
 FoodList.defaultProps = defaultProps
 
-const mapStateToProps = ({ ...state }, { location, }) => {
-    const { id, } = location.query
-    const { foodList: { content, imagePaths, name, }, } = state
+const mapStateToProps = ({ ...state }, { location }) => {
+    const { id } = location.query
+    const { foodList: { content, imagePaths, name } } = state
 
     return {
         content,
