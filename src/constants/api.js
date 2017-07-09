@@ -18,3 +18,5 @@ export const FIND_ART2 = `${prefix}/findArt2`
 export const FIND_GROWTH = `${prefix}/findGrowth`
 
 export const FIND_MAM = `${prefix}/mom`
+
+export const FIND_AR = `${prefix}/findAr`

@@ -36,7 +36,7 @@ class TimeTable extends Component {
             >
                 <Title
                     title="产检时间表"
-                    backToIndex
+                    backTo="index"
                 />
                 {PregnancyTest.map((item) => {
                     const time = new Date().getTime()

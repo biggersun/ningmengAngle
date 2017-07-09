@@ -37,7 +37,7 @@ class VaccineTimeTable extends Component {
         const { vaccineTimeTable: { content = [] } } = this.props
         return (
             <div className="vaccineTime-container">
-                <Title title="疫苗时间表" backToIndex />
+                <Title title="疫苗时间表" backTo="index" />
                 {content.map(item => <VaccineTimeTableItem
                     key={item.id}
                     stage={item.stage}

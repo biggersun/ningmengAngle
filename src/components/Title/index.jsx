@@ -5,12 +5,14 @@ import './index.scss'
 
 const propTypes = {
     title: PropTypes.string.isRequired,
-    backToIndex: PropTypes.bool.isRequired,
+    backTo: PropTypes.string.isRequired,
+    color: PropTypes.string,
 }
 
 const defaultProps = {
     title: '檬宝宝孕育',
-    backToIndex: false,
+    backTo: 'index',
+    color: '#75C5C2',
 }
 
 class Title extends Component {
@@ -21,10 +23,10 @@ class Title extends Component {
     }
 
     render() {
-        const { title, backToIndex } = this.props
+        const { title, backTo, color } = this.props
         return (
-            <div className="page-title">
-                {backToIndex ? <div className="back-btn" onClick={() => hashHistory.push('index')} />
+            <div className="page-title" style={{ backgroundColor: color }}>
+                {backTo ? <div className="back-btn" onClick={() => hashHistory.push(backTo)} />
                 : <div className="back-btn" onClick={() => hashHistory.goBack()} />
                 }
 

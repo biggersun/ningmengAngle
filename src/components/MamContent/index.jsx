@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router'
+
 import './index.scss'
 
 const propTypes = {
@@ -14,15 +15,43 @@ class MamContent extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            clickIndex: 0,
         }
+
+        this.handleTab = this.handleTab.bind(this)
+    }
+
+    handleTab(e) {
+        const { index } = e.currentTarget.dataset
+        this.setState({
+            clickIndex: Number(index),
+        })
     }
 
     render() {
         const { dataList, tabList } = this.props
+        const { clickIndex } = this.state
         return (
             <div className="mam-content-container">
                 <div className="tabBar">
-                    {tabList.map(item => <li><a href={`#${item}`}>{item}</a></li>)}
+                    {tabList.map((item, index) => {
+                        const classNameIcon = index === clickIndex
+                            ? `icon${index + 1} active`
+                            : `icon${index + 1}`
+                        const classNameP = index === clickIndex
+                            ? 'active'
+                            : ''
+                        return (<li>
+                            <a
+                                href={`#${item}`}
+                                data-index={index}
+                                onClick={this.handleTab}
+                            >
+                                <div className={classNameIcon} />
+                                <p className={classNameP}>{item}</p>
+                            </a>
+                        </li>)
+                    })}
                 </div>
                 <div className="content">
                     {dataList.map(item => (<div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import * as actions from 'actions/indexPage'
+import * as actions from 'actions/mamKown'
 import IndexList from 'components/IndexTitle/List'
 import Title from 'components/Title'
 import './index.scss'
@@ -41,6 +41,7 @@ class MamAircles extends Component {
             <div>
                 <Title
                     title={name}
+                    backTo="mamKown"
                 />
                 <IndexList
                     content={content}

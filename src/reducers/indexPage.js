@@ -17,6 +17,14 @@ export default function indexPageArtList(state = initState, { type, payload }) {
             ...state,
             ...payload,
         }
+    case actionTypes.FIND_AR: {
+        const { content, imagePaths } = payload
+        return {
+            ...state,
+            content1: content,
+            imagePaths,
+        }
+    }
     default:
         return state
     }

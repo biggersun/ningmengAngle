@@ -61,7 +61,7 @@ class Ultrasound extends Component {
             <div className="ultrasound-container">
                 <Title
                     title="看懂B超单"
-                    backToIndex
+                    backTo="index"
                 />
                 <UltrasoundSelect onChange={this.handleSelect} weekNumber={numberWeek} />
                 {cycle < 6 ?

@@ -57,12 +57,12 @@ class MamKown extends Component {
         const activeBarLeft = 33 * (type - 1)
         return (
             <div className="mam-container">
-                <Title title="妈妈知道" backToIndex />
+                <Title title="妈妈知道" backTo="index" color="#FEB6B9" />
                 <ul className="tabBar">
                     {tabBar.map(item => <li
                         key={item.id}
                         onClick={() => this.handleTabBar(item.id)}
-                        style={{ color: type === item.id ? '#75C5C2' : '#333' }}
+                        style={{ color: type === item.id ? '#FEB6B9' : '#333' }}
                     >{item.name}</li>)}
                     <li
                         className="active-bar"
