@@ -6,7 +6,7 @@ const WebpackChunkHash = require('webpack-chunk-hash')
 const commonConfig = require('./webpack.config.basic')
 const { appJsPath } = require('./files.config')
 
-const publicPath = '/lemonbaby'
+const publicPath = '/lemonbaby/'
 
 const extractCSS = new ExtractTextPlugin('css/[name].[contenthash:20].css')
 
