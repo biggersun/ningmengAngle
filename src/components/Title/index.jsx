@@ -11,7 +11,7 @@ const propTypes = {
 
 const defaultProps = {
     title: '檬宝宝孕育',
-    backTo: 'index',
+    backTo: '',
     color: '#75C5C2',
 }
 
