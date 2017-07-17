@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { SearchBar } from 'react-weui'
 
-import 'weui'
+import 'weui' // eslint-disable-line import/extensions
 import './index.scss'
 
 

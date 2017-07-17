@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import { LoadMore } from 'react-weui'
-import 'weui'
+import 'weui' // eslint-disable-line import/extensions
 import './index.scss'
 
 import createStore from './store'

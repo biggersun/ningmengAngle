@@ -4,7 +4,7 @@ import { hashHistory } from 'react-router'
 import PropTypes from 'prop-types'
 import { Input } from 'react-weui'
 
-import 'weui'
+import 'weui' // eslint-disable-line import/extensions
 
 import './index.scss'
 
