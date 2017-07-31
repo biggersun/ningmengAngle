@@ -20,6 +20,7 @@ import './index.scss'
 const propTypes = {
     content: PropTypes.array.isRequired,
     imagePaths: PropTypes.object.isRequired,
+    hospitalName: PropTypes.string.isRequired,
 }
 
 const defaultProps = {
@@ -91,14 +92,24 @@ class IndexTitle extends Component {
                 url: '/',
             },
         ]
-        const { content, imagePaths } = this.props
+        const {
+            content,
+            imagePaths,
+            hospitalName,
+        } = this.props
+
         return (
             <div>
                 <div className="index-container-1">
-                    <div className="title">
-                        <img src={logo} alt="" />
-                        <p>檬宝宝孕育，您的私人孕育管家</p>
-                    </div>
+                    {
+                        hospitalName === '0' ? <div className="title">
+                            <img src={logo} alt="" />
+                            <p>檬宝宝孕育，您的私人孕育管家</p>
+                        </div> : <div className="title hospitalName">
+                            <div className="text">{hospitalName}</div>
+                            <p>从孕期到育儿，全程陪伴，贴心管理</p>
+                        </div>
+                    }
                     <div className="content">
                         {arr.map((i) => {
                             if (i.id === 3) {

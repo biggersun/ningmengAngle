@@ -1,4 +1,5 @@
 const prefix = '/lemonbaby'
+export const GET_USERINFO = `${prefix}/userinfo`
 
 export const FIND_VALUE = `${prefix}/findValue`
 export const FIND_CONTENT = `${prefix}/findContent`

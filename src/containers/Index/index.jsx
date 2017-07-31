@@ -31,10 +31,18 @@ class Index extends Component {
     }
 
     render() {
-        const { content, imagePaths } = this.props
+        const {
+            content,
+            imagePaths,
+            hospitalName,
+        } = this.props
         return (
             <div>
-                <IndexTitle content={content} imagePaths={imagePaths} />
+                <IndexTitle
+                    content={content}
+                    imagePaths={imagePaths}
+                    hospitalName={hospitalName}
+                />
             </div>
         )
     }
@@ -44,11 +52,13 @@ Index.propTypes = propTypes
 
 Index.defaultProps = defaultProps
 
-const mapStateToProps = ({ indexPageArtList }) => {
+const mapStateToProps = ({ indexPageArtList, userInfo }) => {
     const { content1, imagePaths } = indexPageArtList
+    const { result } = userInfo
     return {
         content: content1,
         imagePaths,
+        hospitalName: result,
     }
 }
 

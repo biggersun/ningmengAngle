@@ -6,6 +6,7 @@ import vaccineContent from './vaccineContent'
 import indexPageArtList from './indexPage'
 import growth from './growth'
 import mamList from './mamKown'
+import userInfo from './userInfo'
 
 export default {
     ultrasound,
@@ -16,4 +17,5 @@ export default {
     indexPageArtList,
     growth,
     mamList,
+    userInfo,
 }

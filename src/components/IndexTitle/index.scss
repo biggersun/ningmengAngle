@@ -21,6 +21,24 @@
             font-size: 13px;
             margin-top: 7px;
         }
+
+        &.hospitalName{
+            padding-top: 40px;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+
+            & .text{
+                font-size: 21px;
+                color: $text-color;
+                padding: 0 20px 9px 20px;
+                border-bottom: 1px solid rgb(204, 204, 204);
+            }
+            & p{
+                color: $brand-color;
+                font-size: 12px;
+            }
+        }
     }
 
     & > .content{

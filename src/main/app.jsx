@@ -1,6 +1,10 @@
 import React, { PureComponent } from 'react'
+import { WX_AUTH } from 'constants/router'
+import { GET_USERINFO } from 'constants/api'
+import { get } from 'assets/js/request'
 import { LoadMore } from 'react-weui'
-import 'weui' // eslint-disable-line import/extensions
+import URI from 'urijs'
+import 'weui'
 import './index.scss'
 
 import createStore from './store'
@@ -16,20 +20,33 @@ class App extends PureComponent {
         }
     }
 
+    componentWillMount() {
+        const { code } = new URI().query(true)
+        if (!code) {
+            location.href = WX_AUTH
+        }
+    }
+
     componentDidMount() {
         this.initState()
     }
 
-    initState() {
-        const initState = {
-            ultrasound: {},
+    async initState() {
+        const { code } = new URI().query(true)
+
+        let initState = {}
+
+        try {
+            initState = {
+                userInfo: await get(GET_USERINFO, { code }),
+            }
+        } catch (error) {
+            return
         }
 
         const store = createStore(initState)
 
-        setTimeout(() => {
-            this.setState({ initState, store })
-        }, 500)
+        this.setState({ initState, store })
     }
 
     render() {
