@@ -4,6 +4,7 @@ $brand-color: #FEB6B9;
 
 .mam-content-container{
     display: flex;
+    padding-top: 83px;
 
     & .tabBar{
         flex-shrink: 0;
@@ -145,6 +146,7 @@ $brand-color: #FEB6B9;
         flex-grow: 1;
         -webkit-overflow-scrolling: touch;
         padding: 22px 14px;
+        position: relative;
 
         &::-webkit-scrollbar{
             display:none;

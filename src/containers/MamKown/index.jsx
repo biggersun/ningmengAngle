@@ -58,7 +58,7 @@ class MamKown extends Component {
         return (
             <div className="mam-container">
                 <Title title="妈妈知道" backTo="index" color="#FEB6B9" />
-                <ul className="tabBar">
+                <ul className="tabBarIndex">
                     {tabBar.map(item => <li
                         key={item.id}
                         onClick={() => this.handleTabBar(item.id)}

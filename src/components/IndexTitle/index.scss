@@ -134,6 +134,10 @@
                 font-size: 13px;
                 color: $text-gray-color;
                 margin-top: 14px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
             }
         }
     }

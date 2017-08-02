@@ -33,6 +33,7 @@ module.exports = () => webpackMerge(commonConfig(), {
             'classnames',
             'react-router',
             'urijs',
+            'react-scroll',
         ],
         app: appJsPath,
     },

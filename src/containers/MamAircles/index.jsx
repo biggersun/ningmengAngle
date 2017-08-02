@@ -42,6 +42,7 @@ class MamAircles extends Component {
                 <Title
                     title={name}
                     backTo="mamKown"
+                    color="#FEB6B9"
                 />
                 <IndexList
                     content={content}

@@ -46,6 +46,7 @@ module.exports = ({
             'react-dom',
             'classnames',
             'react-router',
+            'react-scroll',
             'urijs',
         ],
         app: hot ? [

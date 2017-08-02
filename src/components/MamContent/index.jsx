@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import Scroll from 'react-scroll'
 import { Link } from 'react-router'
 
 import './index.scss'
@@ -11,6 +12,11 @@ const propTypes = {
 
 const defaultProps = {}
 
+const LinkS = Scroll.Link
+const Element = Scroll.Element
+const Events = Scroll.Events
+const scrollSpy = Scroll.scrollSpy
+
 class MamContent extends Component {
     constructor(props) {
         super(props)
@@ -19,6 +25,15 @@ class MamContent extends Component {
         }
 
         this.handleTab = this.handleTab.bind(this)
+    }
+
+    componentDidMount() {
+        scrollSpy.update()
+    }
+
+    componentWillUnmount() {
+        Events.scrollEvent.remove('begin')
+        Events.scrollEvent.remove('end')
     }
 
     handleTab(e) {
@@ -33,7 +48,7 @@ class MamContent extends Component {
         const { clickIndex } = this.state
         return (
             <div className="mam-content-container">
-                <div className="tabBar">
+                <div className="tabBar nav navbar-nav">
                     {tabList.map((item, index) => {
                         const classNameIcon = index === clickIndex
                             ? `icon${index + 1} active`
@@ -42,20 +57,26 @@ class MamContent extends Component {
                             ? 'active'
                             : ''
                         return (<li>
-                            <a
-                                href={`#${item}`}
+                            <LinkS
+                                to={`${item}`}
+                                containerId="content"
                                 data-index={index}
+                                spy={true}
+                                smooth={true}
+                                duration={500}
                                 onClick={this.handleTab}
                             >
                                 <div className={classNameIcon} />
                                 <p className={classNameP}>{item}</p>
-                            </a>
+                            </LinkS>
                         </li>)
                     })}
                 </div>
-                <div className="content">
-                    {dataList.map(item => (<div>
-                        <div className="title" id={item.title}>{item.title}</div>
+                <div id="content" className="content">
+                    {dataList.map(item => (<Element
+                        name={item.title}
+                    >
+                        <div className="title">{item.title}</div>
                         <ul>
                             {item.list.map(item2 => <Link
                                 to={`mamAircles?id=${item2.articleCategoryId}&name=${item2.name2}`}
@@ -65,7 +86,7 @@ class MamContent extends Component {
                                 >{item2.name2}</li>
                             </Link>)}
                         </ul>
-                    </div>))}
+                    </Element>))}
                 </div>
             </div>
         )

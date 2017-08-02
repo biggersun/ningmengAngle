@@ -5,13 +5,15 @@ $brand-color: #FEB6B9;
 .mam-container{
     background: #FFF;
 
-    & > .tabBar{
+    & > .tabBarIndex{
         width: 100%;
         margin-top: 40px;
         display: flex;
         font-size: 16px;
         border-bottom: 1px solid $border-color;
-        position: relative;
+        position: fixed;
+        z-index: 10;
+        background-color: #FFF;
 
         & .active-bar{
             position: absolute;
