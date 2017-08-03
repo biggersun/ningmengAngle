@@ -56,7 +56,7 @@ class MamContent extends Component {
                         const classNameP = index === clickIndex
                             ? 'active'
                             : ''
-                        return (<li>
+                        return (<li key={index}>
                             <LinkS
                                 to={`${item}`}
                                 containerId="content"
@@ -74,16 +74,16 @@ class MamContent extends Component {
                 </div>
                 <div id="content" className="content">
                     {dataList.map(item => (<Element
+                        key={item.title}
                         name={item.title}
                     >
                         <div className="title">{item.title}</div>
                         <ul>
                             {item.list.map(item2 => <Link
+                                key={item2.articleSubCategoryId}
                                 to={`mamAircles?id=${item2.articleCategoryId}&name=${item2.name2}`}
                             >
-                                <li
-                                    key={item2.articleSubCategoryId}
-                                >{item2.name2}</li>
+                                <li>{item2.name2}</li>
                             </Link>)}
                         </ul>
                     </Element>))}

@@ -24,18 +24,17 @@ class App extends PureComponent {
     }
 
     async initState() {
-        console.log(new URI().toString())
-        const cbUrl = new URI().toString()
+        // const cbUrl = new URI().toString()
 
-        let initState = {}
+        // let initState = {}
 
-        try {
-            initState = await get(GET_WXAUTH, { url: cbUrl })
-        } catch (error) {
-            console.log(error)
-            // return
-        }
+        // try {
+        //     initState = await get(GET_WXAUTH, { url: cbUrl })
+        // } catch (error) {
+        //     // return
+        // }
 
+        const initState = {}
         const store = createStore(initState)
 
         this.setState({ initState, store })

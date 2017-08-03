@@ -57,7 +57,11 @@ class MamKown extends Component {
         const activeBarLeft = 33 * (type - 1)
         return (
             <div className="mam-container">
-                <Title title="妈妈知道" backTo="index" color="#FEB6B9" />
+                <Title
+                    title="妈妈知道"
+                    backTo="index"
+                    color="#FEB6B9"
+                />
                 <ul className="tabBarIndex">
                     {tabBar.map(item => <li
                         key={item.id}

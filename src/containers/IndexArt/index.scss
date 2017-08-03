@@ -1,5 +1,7 @@
 @import 'assets/css/variables.scss';
 
 .airticle-container{
-    padding: 24px $content-padding;
+    padding: 64px $content-padding;
+    background-color: #FFF;
+    min-height: 100vh;
 }
