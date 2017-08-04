@@ -26,6 +26,7 @@ const propTypes = {
 const defaultProps = {
     content: [],
     imagePaths: {},
+    hospitalName: '0',
 }
 
 class IndexTitle extends Component {
@@ -102,7 +103,7 @@ class IndexTitle extends Component {
             <div>
                 <div className="index-container-1">
                     {
-                        hospitalName !== '0' ? <div className="title">
+                        hospitalName === '0' ? <div className="title">
                             <img src={logo} alt="" />
                             <p>檬宝宝孕育，您的私人孕育管家</p>
                         </div> : <div className="title hospitalName">

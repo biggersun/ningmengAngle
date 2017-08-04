@@ -11,11 +11,13 @@ const propTypes = {
     fetchArt: PropTypes.func.isRequired,
     content: PropTypes.array.isRequired,
     imagePaths: PropTypes.object.isRequired,
+    hospitalName: PropTypes.string.isRequired,
 }
 
 const defaultProps = {
     content: [],
     imagePaths: {},
+    hospitalName: '0',
 }
 
 class Index extends Component {
@@ -54,6 +56,7 @@ Index.defaultProps = defaultProps
 
 const mapStateToProps = ({ indexPageArtList, userInfo }) => {
     const { content1, imagePaths } = indexPageArtList
+    console.log(userInfo)
     const { result } = userInfo
     return {
         content: content1,

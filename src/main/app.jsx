@@ -23,13 +23,11 @@ class App extends PureComponent {
     componentWillMount() {
         const uriS = new URI()
         const uri = new URI(WX_AUTH_URL)
-        console.log(uriS.toString())
         uri.setQuery({
             redirect_uri: uriS.toString(),
         })
 
         const { code } = uriS.query(true)
-        console.log(uri.toString())
         if (!code) {
             location.href = uri.toString()
         }
@@ -47,7 +45,9 @@ class App extends PureComponent {
         let initState = {}
 
         try {
-            initState = await get(GET_USERINFO, params)
+            initState = {
+                userInfo: await get(GET_USERINFO, params),
+            }
         } catch (error) {
             return
         }
