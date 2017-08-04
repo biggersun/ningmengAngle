@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
-import { GET_WXAUTH } from 'constants/api'
+import { GET_WXAUTH, GET_USERINFO } from 'constants/api'
+import { WX_AUTH_URL } from 'constants/router'
 import { get } from 'assets/js/request'
 import { LoadMore } from 'react-weui'
 import URI from 'urijs'
@@ -19,22 +20,37 @@ class App extends PureComponent {
         }
     }
 
+    componentWillMount() {
+        const uriS = new URI()
+        const uri = new URI(WX_AUTH_URL)
+        uri.setQuery({
+            redirect_uri: uriS.toString(),
+        })
+
+        const { code } = uriS.query(true)
+
+        if (!code) {
+            location.href = uri.toString()
+        }
+    }
+
     componentDidMount() {
         this.initState()
     }
 
     async initState() {
-        // const cbUrl = new URI().toString()
+        const { code } = new URI().query(true)
+        const params = {
+            code,
+        }
+        let initState = {}
 
-        // let initState = {}
+        try {
+            initState = await get(GET_USERINFO, params)
+        } catch (error) {
+            return
+        }
 
-        // try {
-        //     initState = await get(GET_WXAUTH, { url: cbUrl })
-        // } catch (error) {
-        //     // return
-        // }
-
-        const initState = {}
         const store = createStore(initState)
 
         this.setState({ initState, store })
