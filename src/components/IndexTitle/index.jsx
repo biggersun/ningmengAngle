@@ -98,7 +98,7 @@ class IndexTitle extends Component {
             imagePaths,
             hospitalName,
         } = this.props
-
+        console.log(hospitalName)
         return (
             <div>
                 <div className="index-container-1">
