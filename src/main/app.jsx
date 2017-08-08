@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
-import { GET_WXAUTH, GET_USERINFO } from 'constants/api'
-import { WX_AUTH_URL } from 'constants/router'
+import { GET_HOSPITAL_NAME } from 'constants/api'
+// import { WX_AUTH_URL } from 'constants/router'
 import { get } from 'assets/js/request'
 import { LoadMore } from 'react-weui'
 import URI from 'urijs'
@@ -20,18 +20,18 @@ class App extends PureComponent {
         }
     }
 
-    componentWillMount() {
-        const uriS = new URI()
-        const uri = new URI(WX_AUTH_URL)
-        uri.setQuery({
-            redirect_uri: uriS.toString(),
-        })
+    // componentWillMount() {
+    //     const uriS = new URI()
+    //     const uri = new URI(WX_AUTH_URL)
+    //     uri.setQuery({
+    //         redirect_uri: uriS.toString(),
+    //     })
 
-        const { code } = uriS.query(true)
-        if (!code) {
-            location.href = uri.toString()
-        }
-    }
+    //     const { code } = uriS.query(true)
+    //     if (!code) {
+    //         location.href = uri.toString()
+    //     }
+    // }
 
     componentDidMount() {
         this.initState()
@@ -46,10 +46,10 @@ class App extends PureComponent {
 
         try {
             initState = {
-                userInfo: await get(GET_USERINFO, params),
+                userInfo: await get(GET_HOSPITAL_NAME, params),
             }
         } catch (error) {
-            return
+            // return
         }
 
         const store = createStore(initState)
