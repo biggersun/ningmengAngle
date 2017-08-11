@@ -39,16 +39,22 @@ class IndexTitle extends Component {
     render() {
         const arr = [
             {
+                id: 1,
+                name: '妈妈知道',
+                img: img1,
+                url: '/mamKown',
+            },
+            {
                 id: 2,
                 name: '能不能吃',
                 img: img2,
                 url: 'CannotEat',
             },
             {
-                id: 3,
-                name: '婴儿按摩操',
-                img: img9,
-                url: 'http://icloudcrm.cn/lemonbabywebsite/babyvideo.html',
+                id: 9,
+                name: '发育指标',
+                img: img3,
+                url: 'growth',
             },
             {
                 id: 4,
@@ -69,18 +75,6 @@ class IndexTitle extends Component {
                 url: 'vaccine',
             },
             {
-                id: 9,
-                name: '发育指标',
-                img: img3,
-                url: 'growth',
-            },
-            {
-                id: 1,
-                name: '妈妈知道',
-                img: img1,
-                url: '/mamKown',
-            },
-            {
                 id: 7,
                 name: '宝宝起名',
                 img: img7,
@@ -91,6 +85,12 @@ class IndexTitle extends Component {
                 name: '生男生女',
                 img: img8,
                 url: '/',
+            },
+            {
+                id: 3,
+                name: '婴儿按摩操',
+                img: img9,
+                url: 'http://icloudcrm.cn/lemonbabywebsite/babyvideo.html',
             },
         ]
         const {
