@@ -61,8 +61,8 @@ class MamContent extends Component {
                                 to={`${item}`}
                                 containerId="content"
                                 data-index={index}
-                                spy={true}
-                                smooth={true}
+                                spy
+                                smooth
                                 duration={500}
                                 onClick={this.handleTab}
                             >

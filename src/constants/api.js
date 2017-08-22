@@ -23,3 +23,4 @@ export const FIND_GROWTH = `${prefix}/findGrowth`
 export const FIND_MAM = `${prefix}/mom`
 
 export const FIND_AR = `${prefix}/findAr`
+export const FIND_AR2 = `${prefix}/findAr2`

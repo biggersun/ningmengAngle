@@ -1,7 +1,47 @@
 @import 'assets/css/variables.scss';
 
-.airticle-container{
-    padding: 64px $content-padding;
-    background-color: #FFF;
-    min-height: 100vh;
+.indexArt-container{
+    & .airticle{
+        padding: 64px $content-padding;
+        background-color: #FFF;
+    }
+
+    & .keys{
+        display: flex;
+        align-items: center;
+        height: 40px;
+        padding: 0 $content-padding;
+        background-color: #FFF;
+        position: relative;
+
+        &::before{
+            content: " ";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            color: #E5e5e5;
+            top: 0;
+            border-top: 1px solid #E5e5e5;
+            transform-origin: 0 0;
+            transform: scaleY(.5);
+        }
+
+        & div{
+            font-size: 13px;
+            color: #ffb3b5;
+            background-color: #fde3e7;
+            border-radius: 10px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 18px;
+            padding: 0 20px;
+
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    }
 }

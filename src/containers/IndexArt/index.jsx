@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Title from 'components/Title'
+import NewsList from 'components/NewsList'
 import * as actions from 'actions/indexPage'
 
 import './index.scss'
@@ -11,12 +12,16 @@ const propTypes = {
     fetchArtContent: PropTypes.func.isRequired,
     content: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    keywords: PropTypes.array,
+    aboutNews: PropTypes.array,
 }
 
 const defaultProps = {
     airticleId: null,
     content: '',
     title: '文章详情',
+    keywords: [],
+    aboutNews: [],
 }
 
 class Article extends Component {
@@ -29,6 +34,13 @@ class Article extends Component {
         this.fetchAirticle()
     }
 
+    componentDidUpdate(preProps) {
+        const { airticleId } = this.props
+        if (preProps.airticleId !== airticleId) {
+            this.fetchAirticle()
+        }
+    }
+
     fetchAirticle() {
         const { airticleId, fetchArtContent } = this.props
         const params = {
@@ -38,17 +50,23 @@ class Article extends Component {
     }
 
     render() {
-        const { content, title } = this.props
+        const { content, title, keywords, aboutNews } = this.props
 
         return (
-            <div>
+            <div className="indexArt-container">
                 <Title
                     title={title}
                     color="#FEB6B9"
                 />
                 <div
-                    className="airticle-container"
+                    className="airticle"
                     dangerouslySetInnerHTML={{ __html: content }}
+                />
+                <div className="keys">
+                    {keywords.map(key => <div>{key}</div>)}
+                </div>
+                <NewsList
+                    content={aboutNews}
                 />
             </div>
         )
@@ -64,10 +82,14 @@ const mapStateToProps = ({ indexPageArtList }, { location }) => {
     const { airticleId } = location.query
     const {
         content,
+        keywords,
+        aboutNews,
         title,
     } = indexPageArtList
     return {
         content,
+        keywords,
+        aboutNews,
         title,
         airticleId: Number(airticleId),
     }

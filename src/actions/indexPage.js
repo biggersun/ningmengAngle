@@ -26,7 +26,7 @@ export function fetchArtContent(opts = {}) {
         let payload
 
         try {
-            payload = await get(api.FIND_ART2, params)
+            payload = await get(api.FIND_AR2, params)
         } catch (e) {
             return
         }

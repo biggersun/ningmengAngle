@@ -34,7 +34,9 @@ const hotPlugins = [
 
 module.exports = ({
     apiProxyHost = '182.92.2.176',
+    // apiProxyHost = 'www.icloudcrm.cn',
     apiProxyPort = '8888',
+    // apiProxyPort = '80',
     apiProxyProtocol = 'http:',
 } = {}) => webpackMerge(commonConfig(), {
     devtool: 'cheap-source-map',
