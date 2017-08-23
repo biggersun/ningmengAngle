@@ -62,12 +62,16 @@ class Article extends Component {
                     className="airticle"
                     dangerouslySetInnerHTML={{ __html: content }}
                 />
-                <div className="keys">
-                    {keywords.map(key => <div>{key}</div>)}
-                </div>
-                <NewsList
-                    content={aboutNews}
-                />
+                {
+                    keywords.length > 0 ? <div className="keys">
+                        {keywords.map(key => <div>{key}</div>)}
+                    </div> : null
+                }
+                {
+                    aboutNews.length > 0 ? <NewsList
+                        content={aboutNews}
+                    /> : null
+                }
             </div>
         )
     }

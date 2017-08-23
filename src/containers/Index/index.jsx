@@ -56,7 +56,7 @@ Index.defaultProps = defaultProps
 
 const mapStateToProps = ({ indexPageArtList, userInfo }) => {
     const { content1, imagePaths } = indexPageArtList
-    console.log(userInfo)
+
     const { result } = userInfo
     return {
         content: content1,
